@@ -175,3 +175,9 @@ Received Import Request.
   path: Assets/Scenes/Kyle.unity
   artifactKey: Guid(3a089b28ebe8cc9419c5a2da2c50917b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scenes/Kyle.unity using Guid(3a089b28ebe8cc9419c5a2da2c50917b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca58264e2814d541661a36c3b714a7b1') in 0.008209 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 290.924005 seconds.
+  path: Assets/Scenes/Jeremy.unity
+  artifactKey: Guid(78f0fd604b0e61544aeb4fa8b929704b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Jeremy.unity using Guid(78f0fd604b0e61544aeb4fa8b929704b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcf115bea51216a2ee5cff56d507d36d') in 0.009364 seconds 
