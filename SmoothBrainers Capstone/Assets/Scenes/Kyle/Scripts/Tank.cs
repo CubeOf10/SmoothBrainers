@@ -4,68 +4,41 @@ using UnityEngine;
 
 public class Tank : Entity
 {
-    Rigidbody rb;
 
-    // Tank FSM Enumerator
-    public enum TankBehaviours
-    {
-        Idle,
-        Scouting,
-        Attacking,
-        Fleeing
-    }
-
-    public TankBehaviours tankBehaviours;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        base.Start();
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        // Entity Behaviours - State Switching
-        switch (tankBehaviours)
-        {
-            case TankBehaviours.Idle:
-                Idle();
-                break;
-            case TankBehaviours.Scouting:
-                Scouting();
-                break;
-            case TankBehaviours.Attacking:
-                Attacking();
-                break;
-            case TankBehaviours.Fleeing:
-                Fleeing();
-                break;
-        }
+        base.Update();
     }
 
-    private void Idle()
+    protected override void Idle()
     {
-        if (Vector3.Distance(transform.position, target.transform.position) > 1)
-        {
-            Debug.Log("Idle");
-            MoveTowardsTarget(target.transform.position, rb);
-            Debug.DrawLine(transform.position, target.transform.position, Color.green);
-        }
+        base.Idle();
+        Debug.Log("Idle");
     }
 
-    private void Scouting()
+    protected override void Scouting()
     {
+        base.Scouting();
         Debug.Log("Scouting");
     }
 
-    private void Attacking()
+    protected override void Attacking()
     {
+        base.Attacking();
         Debug.Log("Attacking");
     }
 
-    private void Fleeing()
+    protected override void Fleeing()
     {
+        base.Fleeing();
         Debug.Log("Fleeing");
     }
 }

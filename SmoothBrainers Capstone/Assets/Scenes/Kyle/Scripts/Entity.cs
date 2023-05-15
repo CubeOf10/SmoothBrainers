@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    //Rigidbody rb;
+    Rigidbody rb;
 
     // Entity Health
     public float health = 100.0f;
@@ -24,52 +24,52 @@ public class Entity : MonoBehaviour
     public float attackRange = 20.0f;
 
 
-    //// Entity FSM Enumerator
-    //public enum EntityBehaviours
-    //{
-    //    Idle,
-    //    Scouting,
-    //    Attacking,
-    //    Fleeing
-    //}
+    // Entity FSM Enumerator
+    public enum EntityBehaviours
+    {
+        Idle,
+        Scouting,
+        Attacking,
+        Fleeing
+    }
 
-    //public EntityBehaviours entityBehaviour;
+    public EntityBehaviours entityBehaviour;
 
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
-        //rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
-        //// Entity Behaviours - State Switching
-        //switch (entityBehaviour)
-        //{
-        //    case EntityBehaviours.Idle:
-        //        Idle();
-        //        break;
-        //    case EntityBehaviours.Scouting:
-        //        Scouting();
-        //        break;
-        //    case EntityBehaviours.Attacking:
-        //        Attacking();
-        //        break;
-        //    case EntityBehaviours.Fleeing:
-        //        Fleeing();
-        //        break;
-        //}
+        // Entity Behaviours - State Switching
+        switch (entityBehaviour)
+        {
+            case EntityBehaviours.Idle:
+                Idle();
+                break;
+            case EntityBehaviours.Scouting:
+                Scouting();
+                break;
+            case EntityBehaviours.Attacking:
+                Attacking();
+                break;
+            case EntityBehaviours.Fleeing:
+                Fleeing();
+                break;
+        }
     }
 
-    public void MoveTowardsTarget(Vector3 targetPos, Rigidbody rb)
+    private void MoveTowardsTarget(Vector3 targetPos)
     {
         Debug.Log("Moving");
-        //Rotate and move towards target if out of range
+        // Rotate and move towards target if out of range
         if (Vector3.Distance(targetPos, transform.position) > targetRadius)
         {
-            //Lerp Towards target
+            // Lerp Towards target
             targetRotation = Quaternion.LookRotation(targetPos - transform.position);
             adjRotSpeed = Mathf.Min(rotationSpeed * Time.deltaTime, 1);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, adjRotSpeed);
@@ -78,26 +78,29 @@ public class Entity : MonoBehaviour
         }
     }
 
-    //private void Idle()
-    //{
-    //    Debug.Log("Idle");
-    //    target = testTarget;
-    //    MoveTowardsTarget(target.transform.position);
-    //    Debug.DrawLine(transform.position, target.transform.position, Color.white);
-    //}
+    protected virtual void Idle()
+    {
+        Debug.Log("Idle");
+        if (Vector3.Distance(transform.position, target.transform.position) > 1)
+        {
+            Debug.Log("Idle");
+            MoveTowardsTarget(target.transform.position);
+            Debug.DrawLine(transform.position, target.transform.position, Color.green);
+        }
+    }
 
-    //private void Scouting()
-    //{
-    //    Debug.Log("Scouting");
-    //}
+    protected virtual void Scouting()
+    {
+        Debug.Log("Scouting");
+    }
 
-    //private void Attacking()
-    //{
-    //    Debug.Log("Attacking");
-    //}
+    protected virtual void Attacking()
+    {
+        Debug.Log("Attacking");
+    }
 
-    //private void Fleeing()
-    //{
-    //    Debug.Log("Fleeing");
-    //}
+    protected virtual void Fleeing()
+    {
+        Debug.Log("Fleeing");
+    }
 }
