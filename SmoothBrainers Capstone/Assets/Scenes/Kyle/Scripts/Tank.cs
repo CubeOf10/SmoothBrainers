@@ -24,12 +24,6 @@ public class Tank : Entity
         Debug.Log("Idle");
     }
 
-    protected override void Scouting()
-    {
-        base.Scouting();
-        Debug.Log("Scouting");
-    }
-
     protected override void Attacking()
     {
         base.Attacking();

@@ -1,24 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Entity : MonoBehaviour
 {
     Rigidbody rb;
+    NavMeshAgent navMesh;
 
     // Entity Health
     public float health = 100.0f;
     public GameObject deathEffect;
     public GameObject deathSound;
 
-    // Movement and Rotation
-    public float speed = 50.0f;
-    private float rotationSpeed = 5.0f;
-    private float adjRotSpeed;
-    private Quaternion targetRotation;
+    // Movement
     public GameObject target;
-    public float targetRadius = 200.0f;
-    public float acceleration = 10.0f;
     public float fuel = 50.0f;
 
     public float attackRange = 20.0f;
@@ -28,7 +24,6 @@ public class Entity : MonoBehaviour
     public enum EntityBehaviours
     {
         Idle,
-        Scouting,
         Attacking,
         Fleeing
     }
@@ -40,6 +35,7 @@ public class Entity : MonoBehaviour
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
+        navMesh = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -51,9 +47,6 @@ public class Entity : MonoBehaviour
             case EntityBehaviours.Idle:
                 Idle();
                 break;
-            case EntityBehaviours.Scouting:
-                Scouting();
-                break;
             case EntityBehaviours.Attacking:
                 Attacking();
                 break;
@@ -63,44 +56,39 @@ public class Entity : MonoBehaviour
         }
     }
 
-    private void MoveTowardsTarget(Vector3 targetPos)
-    {
-        Debug.Log("Moving");
-        // Rotate and move towards target if out of range
-        if (Vector3.Distance(targetPos, transform.position) > targetRadius)
-        {
-            // Lerp Towards target
-            targetRotation = Quaternion.LookRotation(targetPos - transform.position);
-            adjRotSpeed = Mathf.Min(rotationSpeed * Time.deltaTime, 1);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, adjRotSpeed);
-
-            rb.AddRelativeForce(Vector3.forward * speed * 20 * Time.deltaTime);
-        }
-    }
-
     protected virtual void Idle()
     {
         Debug.Log("Idle");
         if (Vector3.Distance(transform.position, target.transform.position) > 1)
         {
             Debug.Log("Idle");
-            MoveTowardsTarget(target.transform.position);
-            Debug.DrawLine(transform.position, target.transform.position, Color.green);
+            navMesh.destination = target.transform.position;
+            Debug.DrawLine(transform.position, target.transform.position, Color.red);
         }
     }
 
-    protected virtual void Scouting()
-    {
-        Debug.Log("Scouting");
-    }
-
+    // User chooses their entity -> chooses an enemy entity to attack -> move towards
+    // -> once in attackRange it will attack -> once enemy entity destroyed it will be Idle
     protected virtual void Attacking()
     {
         Debug.Log("Attacking");
+        // Gets transform.position of enemy entity
+        // If in attackRange
+        // Attack
+        // Else
+        // Move towards enemy entity's position
+
     }
 
+    // User chooses their entity -> chooses somewhere on the terrain -> move towards
+    // -> once reached destination -> change behaviour to Idle
     protected virtual void Fleeing()
     {
         Debug.Log("Fleeing");
+        // Gets location where user selects and applies navMesh.destination = target.transform.position;
+        // If not reached destination
+            // Move towards position
+        // Else
+            // Change to Idle
     }
 }
