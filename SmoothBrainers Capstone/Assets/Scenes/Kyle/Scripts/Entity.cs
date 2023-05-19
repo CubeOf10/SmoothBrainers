@@ -18,6 +18,7 @@ public class Entity : MonoBehaviour
     public float fuel = 50.0f;
 
     public float attackRange = 20.0f;
+    public bool inRange = false;
 
 
     // Entity FSM Enumerator
@@ -25,7 +26,7 @@ public class Entity : MonoBehaviour
     {
         Idle,
         Attacking,
-        Fleeing
+        Relocating
     }
 
     public EntityBehaviours entityBehaviour;
@@ -50,45 +51,65 @@ public class Entity : MonoBehaviour
             case EntityBehaviours.Attacking:
                 Attacking();
                 break;
-            case EntityBehaviours.Fleeing:
-                Fleeing();
+            case EntityBehaviours.Relocating:
+                Relocating();
                 break;
         }
     }
 
     protected virtual void Idle()
     {
-        Debug.Log("Idle");
-        if (Vector3.Distance(transform.position, target.transform.position) > 1)
-        {
-            Debug.Log("Idle");
-            navMesh.destination = target.transform.position;
-            Debug.DrawLine(transform.position, target.transform.position, Color.red);
-        }
+
     }
 
     // User chooses their entity -> chooses an enemy entity to attack -> move towards
     // -> once in attackRange it will attack -> once enemy entity destroyed it will be Idle
     protected virtual void Attacking()
     {
-        Debug.Log("Attacking");
         // Gets transform.position of enemy entity
-        // If in attackRange
-        // Attack
+        // If not in attackRange
+            // Move towards enemy entity's position
         // Else
-        // Move towards enemy entity's position
+            // Attack
 
+        
+        // Move towards target until in range to attack
+        if (Vector3.Distance(transform.position, target.transform.position) > attackRange)
+        {
+            Debug.Log("Moving");
+            navMesh.destination = target.transform.position;
+            Debug.DrawLine(transform.position, target.transform.position, Color.red);
+        }
+
+        // In attacking range
+        else
+        {
+            Debug.Log("In Range");
+            navMesh.speed = 0;
+            inRange = true;
+        }
     }
 
     // User chooses their entity -> chooses somewhere on the terrain -> move towards
     // -> once reached destination -> change behaviour to Idle
-    protected virtual void Fleeing()
+    protected virtual void Relocating()
     {
-        Debug.Log("Fleeing");
-        // Gets location where user selects and applies navMesh.destination = target.transform.position;
+        // Gets location where user selects and applies navMesh.destination;
         // If not reached destination
             // Move towards position
         // Else
             // Change to Idle
+
+        
+        // Move towards destination
+        if (Vector3.Distance(transform.position, target.transform.position) > 1)
+        {
+            navMesh.destination = target.transform.position;
+            Debug.DrawLine(transform.position, target.transform.position, Color.yellow);
+        }
+
+        // Change behaviour to Idle
+        else
+            entityBehaviour = EntityBehaviours.Idle;
     }
 }

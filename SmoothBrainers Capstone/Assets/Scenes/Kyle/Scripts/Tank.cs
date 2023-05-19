@@ -21,18 +21,15 @@ public class Tank : Entity
     protected override void Idle()
     {
         base.Idle();
-        Debug.Log("Idle");
     }
 
     protected override void Attacking()
     {
         base.Attacking();
-        Debug.Log("Attacking");
     }
 
-    protected override void Fleeing()
+    protected override void Relocating()
     {
-        base.Fleeing();
-        Debug.Log("Fleeing");
+        base.Relocating();
     }
 }
