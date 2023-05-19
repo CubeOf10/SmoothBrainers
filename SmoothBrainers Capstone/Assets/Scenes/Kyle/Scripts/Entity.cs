@@ -18,7 +18,16 @@ public class Entity : MonoBehaviour
     public float fuel = 50.0f;
 
     public float attackRange = 20.0f;
-    public bool inRange = false;
+
+    [Header("Projectiles")]
+    public GameObject projectilePrefab;
+    public GameObject projectileSpawnPos;
+    public float projectileAmount = 10;
+    public float projectileFireRate = 7f;
+    private float projectileFireTime;
+    public float projectileRegenRate = 5.0f;
+    //private float projectileRegenTimer;
+    //public float projectileMaxAmount = 10;
 
 
     // Entity FSM Enumerator
@@ -76,7 +85,6 @@ public class Entity : MonoBehaviour
         // Move towards target until in range to attack
         if (Vector3.Distance(transform.position, target.transform.position) > attackRange)
         {
-            Debug.Log("Moving");
             navMesh.destination = target.transform.position;
             Debug.DrawLine(transform.position, target.transform.position, Color.red);
         }
@@ -84,9 +92,22 @@ public class Entity : MonoBehaviour
         // In attacking range
         else
         {
-            Debug.Log("In Range");
             navMesh.speed = 0;
-            inRange = true;
+
+            //Fire Missile
+            if (Time.time > projectileFireTime && projectileAmount > 0)
+            {
+                Instantiate(projectilePrefab, projectileSpawnPos.transform.position, projectileSpawnPos.transform.rotation);
+                projectileAmount--;
+                projectileFireTime = Time.time + projectileFireRate;
+            }
+
+            ////Regenerate Missiles
+            //if (Time.time > projectileRegenTimer && projectileAmount < projectileMaxAmount)
+            //{
+            //    projectileAmount++;
+            //    projectileRegenTimer = Time.time + projectileRegenRate;
+            //}
         }
     }
 

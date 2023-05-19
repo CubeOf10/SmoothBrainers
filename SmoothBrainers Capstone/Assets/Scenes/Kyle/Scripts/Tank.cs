@@ -5,7 +5,6 @@ using UnityEngine;
 public class Tank : Entity
 {
 
-
     // Start is called before the first frame update
     protected override void Start()
     {
