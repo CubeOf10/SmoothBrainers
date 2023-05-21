@@ -83,31 +83,34 @@ public class Entity : MonoBehaviour
 
         
         // Move towards target until in range to attack
-        if (Vector3.Distance(transform.position, target.transform.position) > attackRange)
+        if(target)
         {
-            navMesh.destination = target.transform.position;
-            Debug.DrawLine(transform.position, target.transform.position, Color.red);
-        }
-
-        // In attacking range
-        else
-        {
-            navMesh.speed = 0;
-
-            //Fire Missile
-            if (Time.time > projectileFireTime && projectileAmount > 0)
+            if (Vector3.Distance(transform.position, target.transform.position) > attackRange)
             {
-                Instantiate(projectilePrefab, projectileSpawnPos.transform.position, projectileSpawnPos.transform.rotation);
-                projectileAmount--;
-                projectileFireTime = Time.time + projectileFireRate;
+                navMesh.destination = target.transform.position;
+                Debug.DrawLine(transform.position, target.transform.position, Color.red);
             }
 
-            ////Regenerate Missiles
-            //if (Time.time > projectileRegenTimer && projectileAmount < projectileMaxAmount)
-            //{
-            //    projectileAmount++;
-            //    projectileRegenTimer = Time.time + projectileRegenRate;
-            //}
+            // In attacking range
+            else
+            {
+                navMesh.speed = 0;
+
+                //Fire Missile
+                if (Time.time > projectileFireTime && projectileAmount > 0)
+                {
+                    Instantiate(projectilePrefab, projectileSpawnPos.transform.position, projectileSpawnPos.transform.rotation);
+                    projectileAmount--;
+                    projectileFireTime = Time.time + projectileFireRate;
+                }
+
+                ////Regenerate Missiles
+                //if (Time.time > projectileRegenTimer && projectileAmount < projectileMaxAmount)
+                //{
+                //    projectileAmount++;
+                //    projectileRegenTimer = Time.time + projectileRegenRate;
+                //}
+            }
         }
     }
 
