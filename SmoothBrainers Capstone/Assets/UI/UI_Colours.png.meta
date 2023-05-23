@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 042e7eff9fb50c8429a50b8aa725ff6c
+=======
+guid: c9b59e92c37559a439b7f7110c50805d
+>>>>>>> Stashed changes
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,6 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<< Updated upstream
       name: UI_Colour_SkyBlue
       rect:
         serializedVersion: 2
@@ -178,12 +183,29 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 28, y: 26, z: 26, w: 27}
+=======
+      name: UI_Colours_Grey
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 387
+        width: 344
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 11, y: 12, z: 11, w: 11}
+>>>>>>> Stashed changes
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 3c51531315a411b4681817f51e5366b7
       internalID: -1937907143
+=======
+      spriteID: 1924852f8228fa242b17301a9a93eefe
+      internalID: 2114623566
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -191,7 +213,11 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
+<<<<<<< Updated upstream
     spriteID: d0ffddc6c65f0ed4b8df1c0684d06432
+=======
+    spriteID: c7f529a8e4731f94e8097d2420874600
+>>>>>>> Stashed changes
     internalID: 0
     vertices: []
     indices: 
@@ -199,10 +225,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+<<<<<<< Updated upstream
       UI_Colour_SkyBlue: -678730457
       UI_Colours_Grey: -2142750333
       UI_Colours_White: -1937907143
       UI_Colours_DarkBlue: 1662238659
+=======
+      UI_Colours_Grey: 2114623566
+>>>>>>> Stashed changes
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
