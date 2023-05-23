@@ -15,7 +15,7 @@ I:/QUT 2023/Capstone 1/SmoothBrainers/SmoothBrainers/SmoothBrainers Capstone
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-55572
+58817
 Successfully changed project path to: I:/QUT 2023/Capstone 1/SmoothBrainers/SmoothBrainers/SmoothBrainers Capstone
 I:/QUT 2023/Capstone 1/SmoothBrainers/SmoothBrainers/SmoothBrainers Capstone
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,12 +47,12 @@ I:/QUT 2023/Capstone 1/SmoothBrainers/SmoothBrainers/SmoothBrainers Capstone
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [5116] Host "[IP] 192.168.1.190 [Port] 0 [Flags] 2 [Guid] 2972257471 [EditorId] 2972257471 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EO4ORT0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [15284] Host "[IP] 192.168.1.190 [Port] 0 [Flags] 2 [Guid] 1640723449 [EditorId] 1640723449 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EO4ORT0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [5116] Host "[IP] 192.168.1.190 [Port] 0 [Flags] 2 [Guid] 2972257471 [EditorId] 2972257471 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EO4ORT0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [15284] Host "[IP] 192.168.1.190 [Port] 0 [Flags] 2 [Guid] 1640723449 [EditorId] 1640723449 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EO4ORT0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 332.42 ms, found 15 plugins.
-Preloading 1 native plugins for Editor in 1.03 ms.
+Refreshing native plugins compatible for Editor in 246.63 ms, found 15 plugins.
+Preloading 1 native plugins for Editor in 1.05 ms.
 Initialize engine version: 2021.3.15f1 (e8e88683f834)
 [Subsystems] Discovering subsystems at path F:/Unity/2021.3.15f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path I:/QUT 2023/Capstone 1/SmoothBrainers/SmoothBrainers/SmoothBrainers Capstone/Assets
@@ -68,51 +68,51 @@ Initialize mono
 Mono path[0] = 'F:/Unity/2021.3.15f1/Editor/Data/Managed'
 Mono path[1] = 'F:/Unity/2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'F:/Unity/2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56536
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56228
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: F:/Unity/2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.027409 seconds.
+Registered in 0.004916 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 200.52 ms, found 15 plugins.
+Refreshing native plugins compatible for Editor in 179.42 ms, found 15 plugins.
 Preloading 1 native plugins for Editor in 0.12 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.952 seconds
+- Completed reload, in  0.974 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1952ms)
-		BeginReloadAssembly (254ms)
+	ReloadAssembly (975ms)
+		BeginReloadAssembly (128ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (1108ms)
-			LoadAssemblies (256ms)
+		EndReloadAssembly (707ms)
+			LoadAssemblies (127ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (514ms)
+			SetupTypeCache (165ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (44ms)
-			SetupLoadedEditorAssemblies (451ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (392ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
+				InitializePlatformSupportModulesInManaged (9ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (201ms)
+				RefreshPlugins (180ms)
 				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (177ms)
-				ProcessInitializeOnLoadMethodAttributes (63ms)
+				ProcessInitializeOnLoadAttributes (147ms)
+				ProcessInitializeOnLoadMethodAttributes (55ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.042791 seconds.
+Registered in 0.032876 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image I:\QUT 2023\Capstone 1\SmoothBrainers\SmoothBrainers\SmoothBrainers Capstone\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Symbol file LoadedFromMemory doesn't match image I:\QUT 2023\Capstone 1\SmoothBrainers\SmoothBrainers\SmoothBrainers Capstone\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 177.03 ms, found 15 plugins.
-Preloading 1 native plugins for Editor in 0.17 ms.
+Refreshing native plugins compatible for Editor in 228.02 ms, found 15 plugins.
+Preloading 1 native plugins for Editor in 0.14 ms.
 Package Manager log level set to [2]
 [XR] OculusXRPlugin: registering subsystems
 [XR] Unable to register display lifecyle provider: [1]
@@ -120,44 +120,44 @@ Package Manager log level set to [2]
 [XR] Unable to register input lifecyle provider: [1]
 [XR] OVRP version 1.85.0
 Mono: successfully reloaded assembly
-- Completed reload, in  2.206 seconds
+- Completed reload, in  2.610 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2207ms)
-		BeginReloadAssembly (174ms)
+	ReloadAssembly (2611ms)
+		BeginReloadAssembly (215ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
+			DisableScriptedObjects (11ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (28ms)
-		EndReloadAssembly (1872ms)
-			LoadAssemblies (215ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (2201ms)
+			LoadAssemblies (240ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (469ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (119ms)
-			SetupLoadedEditorAssemblies (999ms)
+			SetupTypeCache (523ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (245ms)
+			SetupLoadedEditorAssemblies (1069ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (178ms)
-				BeforeProcessingInitializeOnLoad (230ms)
-				ProcessInitializeOnLoadAttributes (540ms)
-				ProcessInitializeOnLoadMethodAttributes (40ms)
-				AfterProcessingInitializeOnLoad (4ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (228ms)
+				BeforeProcessingInitializeOnLoad (247ms)
+				ProcessInitializeOnLoadAttributes (548ms)
+				ProcessInitializeOnLoadMethodAttributes (34ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (15ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 3.61 ms, found 15 plugins.
-Preloading 1 native plugins for Editor in 0.14 ms.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 1.59 ms, found 15 plugins.
+Preloading 1 native plugins for Editor in 0.12 ms.
 Unloading 6128 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 82 unused Assets / (155.6 KB). Loaded Objects now: 6542.
 Memory consumption went from 222.6 MB to 222.4 MB.
-Total: 4.921700 ms (FindLiveObjects: 0.763600 ms CreateObjectMapping: 0.747300 ms MarkObjects: 3.240400 ms  DeleteObjects: 0.169100 ms)
+Total: 4.761000 ms (FindLiveObjects: 0.719800 ms CreateObjectMapping: 0.831600 ms MarkObjects: 3.043800 ms  DeleteObjects: 0.164300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -171,13 +171,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 20449.196293 seconds.
-  path: Assets/ExampleAssets
-  artifactKey: Guid(5040ff35809714c9f899bd2e7ae0f30a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ExampleAssets using Guid(5040ff35809714c9f899bd2e7ae0f30a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '605975ec7d005190aad15937c7c96a55') in 0.048703 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 18266.270622 seconds.
+  Time since last request: 40231.446623 seconds.
   path: Assets/UI/UI_Colours.png
   artifactKey: Guid(042e7eff9fb50c8429a50b8aa725ff6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UI/UI_Colours.png using Guid(042e7eff9fb50c8429a50b8aa725ff6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4069aa3b6f5d2b1e167f14ec251c8c8') in 0.545366 seconds 
+Start importing Assets/UI/UI_Colours.png using Guid(042e7eff9fb50c8429a50b8aa725ff6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e71c04a9de658ca3f8ccc7fccde3fee') in 0.109604 seconds 
