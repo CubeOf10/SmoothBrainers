@@ -29,7 +29,7 @@ public class Entity : MonoBehaviour
     //private float projectileRegenTimer;
     //public float projectileMaxAmount = 10;
 
-
+    public GameObject unitDisplay;
     // Entity FSM Enumerator
     public enum EntityBehaviours
     {
