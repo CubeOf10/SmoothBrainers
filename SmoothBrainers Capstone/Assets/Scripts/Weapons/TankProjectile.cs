@@ -21,13 +21,16 @@ public class TankProjectile : Projectile
         rb.useGravity = false;
 
         entity = GameObject.Find("Tank");
-        targetPos = entity.GetComponent<Entity>().target.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!launched)
+        if(entity.GetComponent<Entity>().target)
+        {
+            targetPos = entity.GetComponent<Entity>().target.transform.position;
+        }
+        if (!launched && targetPos!= null)
         {
             Launch();
             launched = true;
