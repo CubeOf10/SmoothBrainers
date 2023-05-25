@@ -5,11 +5,13 @@ using UnityEngine.AI;
 
 public class Entity : MonoBehaviour
 {
+    GameManager gameManager;
     Rigidbody rb;
     NavMeshAgent navMesh;
 
     // Entity Health
     public float health = 100.0f;
+    float maxHealth;
     public GameObject deathEffect;
     public GameObject deathSound;
 
@@ -23,13 +25,15 @@ public class Entity : MonoBehaviour
     public GameObject projectilePrefab;
     public GameObject projectileSpawnPos;
     public float projectileAmount = 10;
+    float projectileMaxAmount;
     public float projectileFireRate = 7f;
     private float projectileFireTime;
     public float projectileRegenRate = 5.0f;
     //private float projectileRegenTimer;
     //public float projectileMaxAmount = 10;
 
-    public GameObject unitDisplay;
+    UnitDisplayController unitDisplay;
+    public Canvas unitDisplayCanvas;
     // Entity FSM Enumerator
     public enum EntityBehaviours
     {
@@ -44,8 +48,17 @@ public class Entity : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        maxHealth = health;
+        projectileMaxAmount = projectileAmount;
+
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        target = gameManager.targets[0];
         rb = GetComponent<Rigidbody>();
         navMesh = GetComponent<NavMeshAgent>();
+
+        unitDisplay = unitDisplayCanvas.GetComponent<UnitDisplayController>();
+        unitDisplay.setAction(EntityBehaviours.Idle.ToString());
     }
 
     // Update is called once per frame
@@ -64,11 +77,15 @@ public class Entity : MonoBehaviour
                 Relocating();
                 break;
         }
+
+        unitDisplay.transform.LookAt(gameManager.Player.transform.position);
+        transform.Rotate(0, 180, 0);
+        unitDisplay.setAcceleration(navMesh.acceleration);
     }
 
     protected virtual void Idle()
     {
-
+        unitDisplay.setAction(EntityBehaviours.Idle.ToString());
     }
 
     // User chooses their entity -> chooses an enemy entity to attack -> move towards
@@ -79,12 +96,13 @@ public class Entity : MonoBehaviour
         // If not in attackRange
             // Move towards enemy entity's position
         // Else
-            // Attack
-
-        
+            // Attack        
         // Move towards target until in range to attack
         if(target)
         {
+
+            unitDisplay.setAction(EntityBehaviours.Attacking.ToString());
+
             if (Vector3.Distance(transform.position, target.transform.position) > attackRange)
             {
                 navMesh.destination = target.transform.position;
@@ -102,6 +120,9 @@ public class Entity : MonoBehaviour
                     Instantiate(projectilePrefab, projectileSpawnPos.transform.position, projectileSpawnPos.transform.rotation);
                     projectileAmount--;
                     projectileFireTime = Time.time + projectileFireRate;
+
+                    unitDisplay.setAmmo(projectileAmount, projectileMaxAmount);
+                    unitDisplay.setFirepower(projectileAmount * projectilePrefab.GetComponent<Projectile>().damage);
                 }
 
                 ////Regenerate Missiles
@@ -128,6 +149,8 @@ public class Entity : MonoBehaviour
         // Move towards destination
         if (Vector3.Distance(transform.position, target.transform.position) > 1)
         {
+            unitDisplay.setAction(EntityBehaviours.Relocating.ToString());
+
             navMesh.destination = target.transform.position;
             Debug.DrawLine(transform.position, target.transform.position, Color.yellow);
         }
@@ -135,5 +158,21 @@ public class Entity : MonoBehaviour
         // Change behaviour to Idle
         else
             entityBehaviour = EntityBehaviours.Idle;
+    }
+
+    protected virtual void TakeDamage(float incomingDamage)
+    {
+        // Reduces entity health by incoming damage value
+        // If no health remains, remove entity
+
+        health -= incomingDamage;
+        if(health <= 0)
+        {
+            Instantiate(deathEffect);
+            Instantiate(deathSound);
+            Destroy(gameObject);
+        } 
+        
+        unitDisplay.setHealth(health / maxHealth);
     }
 }
