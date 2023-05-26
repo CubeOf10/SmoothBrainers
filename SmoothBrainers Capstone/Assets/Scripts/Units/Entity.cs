@@ -113,6 +113,7 @@ public class Entity : MonoBehaviour
             else
             {
                 navMesh.speed = 0;
+                navMesh.destination = transform.position;
 
                 //Fire Missile
                 if (Time.time > projectileFireTime && projectileAmount > 0)

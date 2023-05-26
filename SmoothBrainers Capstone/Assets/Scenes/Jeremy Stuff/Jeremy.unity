@@ -4589,7 +4589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8814361568328265096, guid: 713f9d217b1bc3943bb8585540da4aff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.033
+      value: 0.769
       objectReference: {fileID: 0}
     - target: {fileID: 8814361568328265096, guid: 713f9d217b1bc3943bb8585540da4aff, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4597,7 +4597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8814361568328265096, guid: 713f9d217b1bc3943bb8585540da4aff, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.78
+      value: 0.698
       objectReference: {fileID: 0}
     - target: {fileID: 8814361568328265096, guid: 713f9d217b1bc3943bb8585540da4aff, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5302,6 +5302,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 700465848}
     m_Modifications:
+    - target: {fileID: -907629201119803839, guid: a2fe220046bb0d9438c0de4a20f826a1, type: 3}
+      propertyPath: m_Radius
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: -907629201119803839, guid: a2fe220046bb0d9438c0de4a20f826a1, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2485936886226501662, guid: a2fe220046bb0d9438c0de4a20f826a1, type: 3}
       propertyPath: m_Name
       value: Tank

@@ -18,9 +18,9 @@ public class Projectile : MonoBehaviour {
 	public GameObject hitSound;
 
 	// Use this for initialization
-	void Start () {
+	protected virtual void Start () {
 	
 		//Set object kill time
-		Destroy (this.gameObject, lifeTime);
+		Destroy (gameObject, lifeTime);
 	}
 }

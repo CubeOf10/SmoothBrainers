@@ -15,12 +15,15 @@ public class TankProjectile : Projectile
 
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
 
         entity = GameObject.Find("Tank");
+
+        base.Start();
+        
     }
 
     // Update is called once per frame
