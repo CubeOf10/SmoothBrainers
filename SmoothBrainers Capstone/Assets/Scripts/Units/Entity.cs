@@ -112,7 +112,7 @@ public class Entity : MonoBehaviour
             // In attacking range
             else
             {
-                navMesh.speed = 0;
+                //navMesh.speed = 0;
                 navMesh.destination = transform.position;
 
                 //Fire Missile
