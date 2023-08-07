@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankProjectile : Projectile
+public class TankProjectile : BaseProjectile
 {
     Rigidbody rb;
     GameObject entity;

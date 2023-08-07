@@ -123,7 +123,7 @@ public class Entity : MonoBehaviour
                     projectileFireTime = Time.time + projectileFireRate;
 
                     unitDisplay.setAmmo(projectileAmount, projectileMaxAmount);
-                    unitDisplay.setFirepower(projectileAmount * projectilePrefab.GetComponent<Projectile>().damage);
+                    unitDisplay.setFirepower(projectileAmount * projectilePrefab.GetComponent<BaseProjectile>().damage);
                 }
 
                 ////Regenerate Missiles

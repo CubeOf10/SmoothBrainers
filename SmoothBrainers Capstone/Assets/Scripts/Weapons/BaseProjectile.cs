@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Projectile : MonoBehaviour {
+public class BaseProjectile : MonoBehaviour {
 
 	public float damage;
 	public float projectileSpeed;
