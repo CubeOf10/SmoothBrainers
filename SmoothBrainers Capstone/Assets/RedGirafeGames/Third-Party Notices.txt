@@ -1,0 +1,4 @@
+This asset is governed by the Asset Store EULA; however, the following components are governed by the licenses indicated below:
+A. Kenney Game Assets
+CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+See and get Kenney assets at Kenney.nl

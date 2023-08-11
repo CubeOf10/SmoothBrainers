@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Missile : Projectile {
+public class Missile : BaseProjectile {
 
 	GameManager gameManager;
 	GameObject entity;
