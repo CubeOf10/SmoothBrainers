@@ -5,7 +5,7 @@ using UnityEngine;
 public class TankProjectile : BaseProjectile
 {
     Rigidbody rb;
-    GameObject entity;
+    public GameObject entity;
     Vector3 targetPos;
 
     public float h = 25;
@@ -20,7 +20,7 @@ public class TankProjectile : BaseProjectile
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
 
-        entity = GameObject.Find("Tank");
+        //entity = GameObject.Find("Tank");
 
         base.Start();
         

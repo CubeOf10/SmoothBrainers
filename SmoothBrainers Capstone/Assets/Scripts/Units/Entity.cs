@@ -118,7 +118,8 @@ public class Entity : MonoBehaviour
                 //Fire Missile
                 if (Time.time > projectileFireTime && projectileAmount > 0)
                 {
-                    Instantiate(projectilePrefab, projectileSpawnPos.transform.position, projectileSpawnPos.transform.rotation);
+                    GameObject newProjectile = Instantiate(projectilePrefab, projectileSpawnPos.transform.position, projectileSpawnPos.transform.rotation);
+                    newProjectile.GetComponent<TankProjectile>().entity = gameObject;
                     projectileAmount--;
                     projectileFireTime = Time.time + projectileFireRate;
 
