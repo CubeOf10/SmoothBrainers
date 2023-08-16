@@ -1437,6 +1437,7 @@ GameObject:
   - component: {fileID: 4245044001439360309}
   - component: {fileID: -907629201119803839}
   - component: {fileID: 4741550774212799199}
+  - component: {fileID: 877142678225677691}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Tank
@@ -1672,6 +1673,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuFadeDelay: 4
   menuFadeSpeed: 0.2
+--- !u!114 &877142678225677691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2485936886226501662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a5e5b4c78c6ed4da9acc05ce4c8e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parseChildren: 0
+  persistActive: 1
+  persistPosition: 1
+  useLocalPosition: 0
+  persistRotation: 1
+  useLocalRotation: 0
+  persistScale: 0
+  persistVelocity: 0
+  persistAnimator: 0
+  persistAnimatorTransitions: 1
+  agentAnimator: {fileID: 0}
+  persistParticles: 0
+  persistParticlesList: []
+  searchParticleChildren: 0
+  hidePolicy: 1
+  cloneMaterial: {fileID: 0}
+  applyColorToClone: 0
+  cloneColor: {r: 0, g: 1, b: 0, a: 1}
+  applySimulationConfigOnChildren: 1
+  simulationCallbackPolicy: 2
+  agentRigidbody: {fileID: 0}
+  logDebug: 0
+  _onInitTimeAgentsList:
+    m_PersistentCalls:
+      m_Calls: []
+  _onTimeLineChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSimulationStart:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSimulationUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSimulationFixedUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSimulationLateUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSimulationComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  _onPersistTick:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSetDataTick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2485936886712013968
 GameObject:
   m_ObjectHideFlags: 0
