@@ -7,6 +7,7 @@ TagManager:
   - SamplesInfoPanel
   - Helicopter
   - Tank
+  - PlayerHands
   layers:
   - Default
   - TransparentFX

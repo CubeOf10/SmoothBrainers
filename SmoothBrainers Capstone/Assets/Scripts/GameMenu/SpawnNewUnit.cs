@@ -7,17 +7,6 @@ public class SpawnNewUnit : MonoBehaviour
     public Transform spawnPoint;
     public GameObject unitToSpawn;
     public GameObject currentUnit;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerExit(Collider other)
     {
         if(other.tag == unitToSpawn.tag && other != currentUnit)
