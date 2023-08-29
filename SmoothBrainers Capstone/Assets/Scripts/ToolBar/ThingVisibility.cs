@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CloudVisibility : ButtonEffect
+public class ThingVisibility : ButtonEffect
 {
-    public GameObject clouds;
+    public GameObject thingToHide;
     // Start is called before the first frame update
     public override void ButtonPressed()
     {
         if(clouds.activeInHierarchy)
         {
-            clouds.SetActive(false);
+            thingToHide.SetActive(false);
         }
         else
         {
-            clouds.SetActive(true);
+            thingToHide.SetActive(true);
         }
     }
 }
