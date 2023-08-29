@@ -8,7 +8,7 @@ public class ThingVisibility : ButtonEffect
     // Start is called before the first frame update
     public override void ButtonPressed()
     {
-        if(clouds.activeInHierarchy)
+        if(thingToHide.activeInHierarchy)
         {
             thingToHide.SetActive(false);
         }
