@@ -45,7 +45,7 @@ public class TankProjectile : BaseProjectile
         Physics.gravity = Vector3.up * gravity;
         rb.useGravity = true;
         rb.velocity = CalculateLaunchVelocity();
-        Debug.Log(CalculateLaunchVelocity());
+        //Debug.Log(CalculateLaunchVelocity());
     }
 
     private Vector3 CalculateLaunchVelocity()
