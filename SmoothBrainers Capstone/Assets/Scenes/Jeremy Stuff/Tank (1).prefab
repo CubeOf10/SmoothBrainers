@@ -1569,7 +1569,7 @@ MonoBehaviour:
   projectileAmount: 10
   projectileFireRate: 7
   projectileRegenRate: 5
-  unitDisplay: {fileID: 4839462487556496644}
+  unitDisplayCanvas: {fileID: 0}
   entityBehaviour: 1
 --- !u!195 &6444635488504459448
 NavMeshAgent:
@@ -1605,6 +1605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3593d0f0025ea4e4187b4ddc70cd4933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuFadeDelay: 0
+  menuFadeSpeed: 0
 --- !u!1 &1873236360028164886
 GameObject:
   m_ObjectHideFlags: 0
