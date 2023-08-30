@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5472162707240890420}
   - component: {fileID: 3902767473398037610}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Waypoint Marker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a379cec2ba497874788d17eb312c61be, type: 2}
+  - {fileID: 2100000, guid: d8661ef17e8fdf545a46589f2ebce4a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -1775,7 +1775,7 @@ MonoBehaviour:
   pathPoints: []
   distanceToPlane: 0.4
   timeBetweenPoints: 1
-  distanceBetweenPoints: 0.2
+  distanceBetweenPoints: 0.05
   marker: {fileID: 8331191039604317818, guid: 655ed1d21621b6d4f85cc9df469b055c, type: 3}
 --- !u!1 &2485936886712013968
 GameObject:

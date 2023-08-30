@@ -105,8 +105,11 @@ public class Entity : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target.transform.position) > attackRange)
             {
-                navMesh.destination = target.transform.position;
-                Debug.DrawLine(transform.position, target.transform.position, Color.red);
+                if(navMesh.isOnNavMesh)
+                {
+                    navMesh.destination = target.transform.position;
+                    Debug.DrawLine(transform.position, target.transform.position, Color.red);
+                }
             }
 
             // In attacking range

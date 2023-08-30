@@ -24,17 +24,25 @@ public class DragMe : MonoBehaviour
     }
     IEnumerator PlacePoint()
     {
+        Debug.Log("Part 2");
         yield return new WaitForSeconds(timeBetweenPoints);
-        if(BeingDragged && Vector2.Distance(new Vector3(transform.position.x, transform.position.y, transform.position.z), 
-                                            new Vector3(pathPoints[pathPoints.Count].x,
-                                                pathPoints[pathPoints.Count].y, pathPoints[pathPoints.Count].z)) 
-                                            > distanceBetweenPoints)
+        Debug.Log("P3");
+        if(BeingDragged)
         {
+            //Debug.Log(pathPoints.Count + " number of Points ");
+            if(Vector2.Distance(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(
+                                    pathPoints[pathPoints.Count-1].x, 
+                                    pathPoints[pathPoints.Count-1].y, 
+                                    pathPoints[pathPoints.Count-1].z)) >
+                                    distanceBetweenPoints){
+        
+        
             pathPoints.Add(new Vector3(transform.position.x, transform.position.y, transform.position.z));
             GameObject newMarker = Instantiate(marker); 
 
             newMarker.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-            Debug.Log("Point Added at " + pathPoints[pathPoints.Count-1].ToString());
+            //Debug.Log("Point Added at " + pathPoints[pathPoints.Count-1].ToString());
+            }
         }
         if(!BeingDragged)
         {
@@ -48,6 +56,7 @@ public class DragMe : MonoBehaviour
     {
         BeingDragged = true;
         pathPoints.Add(new Vector3(transform.position.x, transform.position.y, transform.position.z));
+        Debug.Log("Picked Up");
         StartCoroutine(PlacePoint());
     }
     public void PutDown()
