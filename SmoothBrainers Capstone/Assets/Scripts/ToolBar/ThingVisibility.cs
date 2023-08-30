@@ -5,7 +5,6 @@ using UnityEngine;
 public class ThingVisibility : ButtonEffect
 {
     public GameObject thingToHide;
-    // Start is called before the first frame update
     public override void ButtonPressed()
     {
         if(thingToHide.activeInHierarchy)
