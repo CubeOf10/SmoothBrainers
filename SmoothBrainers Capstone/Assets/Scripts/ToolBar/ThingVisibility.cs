@@ -5,10 +5,9 @@ using UnityEngine;
 public class ThingVisibility : ButtonEffect
 {
     public GameObject thingToHide;
-    // Start is called before the first frame update
     public override void ButtonPressed()
     {
-        if(clouds.activeInHierarchy)
+        if(thingToHide.activeInHierarchy)
         {
             thingToHide.SetActive(false);
         }
