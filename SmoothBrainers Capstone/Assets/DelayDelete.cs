@@ -2,16 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class DelayDelete : MonoBehaviour
 {
-    public GameObject Player;
-    public List<GameObject> targets;
-    public List<GameObject> units;
+    public float deleteTimer = 2f;
     // Start is called before the first frame update
     void Start()
     {
-        
-        Player = GameObject.FindGameObjectWithTag("Player");
+        Destroy(transform.gameObject, deleteTimer);
     }
 
     // Update is called once per frame

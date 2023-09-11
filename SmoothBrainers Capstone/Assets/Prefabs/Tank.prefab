@@ -1671,12 +1671,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 2485936886226501662}
   m_Enabled: 0
   m_AgentTypeID: 0
-  m_Radius: 0.05
+  m_Radius: 0.01
   m_Speed: 1
   m_Acceleration: 0.6
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0.1
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1777,6 +1777,7 @@ MonoBehaviour:
   timeBetweenPoints: 1
   distanceBetweenPoints: 0.05
   marker: {fileID: 8331191039604317818, guid: 655ed1d21621b6d4f85cc9df469b055c, type: 3}
+  groundPos: {fileID: 4997091452771180317, guid: ab4dfdba1a61b384cacebff79a3c3c47, type: 3}
 --- !u!1 &2485936886712013968
 GameObject:
   m_ObjectHideFlags: 0

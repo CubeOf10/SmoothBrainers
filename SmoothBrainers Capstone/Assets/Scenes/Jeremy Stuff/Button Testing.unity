@@ -803,6 +803,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d952c175ec3c6554199fd744548ce50a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &290286744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2068248237551847628, guid: ea16c3c8c1688234fa81a4f39339bf1b, type: 3}
+  m_PrefabInstance: {fileID: 807195194}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &300310172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1434,6 +1439,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a912065df8e0b4b4385507810e31c60d, type: 3}
+--- !u!1 &381679533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6600396371627242169, guid: a912065df8e0b4b4385507810e31c60d, type: 3}
+  m_PrefabInstance: {fileID: 381679532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &395532972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3711,7 +3721,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1054376643923719174, guid: ea16c3c8c1688234fa81a4f39339bf1b, type: 3}
   m_PrefabInstance: {fileID: 807195194}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 290286744}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a379f34d4f4f2e408d34f14bfb753ce, type: 3}
@@ -3738,6 +3748,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5545149144574972019, guid: ea16c3c8c1688234fa81a4f39339bf1b, type: 3}
   m_PrefabInstance: {fileID: 807195194}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &807195200
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290286744}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1359418
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &808970946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6434,6 +6457,10 @@ PrefabInstance:
       propertyPath: _interactors.Array.data[1]
       value: 
       objectReference: {fileID: 1812763038}
+    - target: {fileID: 5679112963167615787, guid: 4c0ee7a14e52ba544b89c2f777670cca, type: 3}
+      propertyPath: m_TagString
+      value: PlayerHands
+      objectReference: {fileID: 0}
     - target: {fileID: 5679112963574900116, guid: 4c0ee7a14e52ba544b89c2f777670cca, type: 3}
       propertyPath: _interactors.Array.size
       value: 2
@@ -6493,6 +6520,10 @@ PrefabInstance:
     - target: {fileID: 5679112963628884801, guid: 4c0ee7a14e52ba544b89c2f777670cca, type: 3}
       propertyPath: m_Name
       value: OVRControllerHands
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679112963636671122, guid: 4c0ee7a14e52ba544b89c2f777670cca, type: 3}
+      propertyPath: m_TagString
+      value: PlayerHands
       objectReference: {fileID: 0}
     - target: {fileID: 9205377790416818695, guid: 4c0ee7a14e52ba544b89c2f777670cca, type: 3}
       propertyPath: _hmdData
@@ -6568,7 +6599,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5679112963167615785, guid: 4c0ee7a14e52ba544b89c2f777670cca, type: 3}
   m_PrefabInstance: {fileID: 1688469501}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2077349379}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a379f34d4f4f2e408d34f14bfb753ce, type: 3}
@@ -7633,7 +7664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3607977843458538249, guid: e5310dbf00dc7a646b35ecf337689239, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4132558532486832563, guid: e5310dbf00dc7a646b35ecf337689239, type: 3}
       propertyPath: m_RootOrder
@@ -7706,7 +7737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2515d5becf6cfe7418053d63da11e12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thingToHide: {fileID: 0}
+  thingToHide: {fileID: 381679533}
 --- !u!1001 &1992812950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8170,6 +8201,24 @@ MonoBehaviour:
   _movementProvider: {fileID: 0}
   _handAligment: 0
   _handGrabPoses: []
+--- !u!1 &2077349379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5679112963167615787, guid: 4c0ee7a14e52ba544b89c2f777670cca, type: 3}
+  m_PrefabInstance: {fileID: 1688469501}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &2077349382
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077349379}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.24
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2109395988
 GameObject:
   m_ObjectHideFlags: 0
