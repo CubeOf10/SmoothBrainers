@@ -31,4 +31,8 @@ public class Tank : Entity
     {
         base.Relocating();
     }
+    protected override void Follow()
+    {
+        base.Follow();
+    }
 }

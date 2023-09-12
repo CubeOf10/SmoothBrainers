@@ -39,7 +39,8 @@ public class Entity : MonoBehaviour
     {
         Idle,
         Attacking,
-        Relocating
+        Relocating,
+        Follow
     }
 
     public EntityBehaviours entityBehaviour;
@@ -76,6 +77,9 @@ public class Entity : MonoBehaviour
             case EntityBehaviours.Relocating:
                 Relocating();
                 break;
+            case EntityBehaviours.Follow:
+                Follow();
+                break;
         }
 
         unitDisplay.transform.LookAt(gameManager.Player.transform.position);
@@ -86,6 +90,11 @@ public class Entity : MonoBehaviour
     protected virtual void Idle()
     {
         unitDisplay.setAction(EntityBehaviours.Idle.ToString());
+    }
+
+    protected virtual void Follow()
+    {
+        unitDisplay.setAction(EntityBehaviours.Follow.ToString());
     }
 
     // User chooses their entity -> chooses an enemy entity to attack -> move towards

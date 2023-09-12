@@ -12,11 +12,13 @@ public class PlayPaths : ButtonEffect
     }
     public override void ButtonPressed()
     {
+                    Debug.Log("pushed");
+
         foreach(GameObject unit in gameManager.GetComponent<GameManager>().units)
         {
             //Sleep
             unit.GetComponent<Entity>().entityBehaviour = Entity.EntityBehaviours.Idle;
-
+            
         }
     }
 
