@@ -11,14 +11,13 @@ public class PlayPaths : ButtonEffect
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
     public override void ButtonPressed()
-    {
-                    Debug.Log("pushed");
-
+    {        
         foreach(GameObject unit in gameManager.GetComponent<GameManager>().units)
         {
-            //Sleep
-            unit.GetComponent<Entity>().entityBehaviour = Entity.EntityBehaviours.Idle;
+            unit.GetComponent<Entity>().moveTargetIndex = 0;
+            unit.transform.position = unit.GetComponent<DragMe>().getMarkerHolder().GetChild(0).transform.position;
             
+            unit.GetComponent<Entity>().entityBehaviour = Entity.EntityBehaviours.Follow;   
         }
     }
 

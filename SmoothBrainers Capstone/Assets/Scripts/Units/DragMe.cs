@@ -19,6 +19,10 @@ public class DragMe : MonoBehaviour
         markerHolder = new GameObject();
         markerHolder.name = "Marker Holder";
     }
+    public Transform getMarkerHolder()
+    {
+        return markerHolder.transform;
+    }
     IEnumerator PlacePoint()
     {
         yield return new WaitForSeconds(timeBetweenPoints);
@@ -78,5 +82,6 @@ public class DragMe : MonoBehaviour
     void OnDestroy()
     {
         Destroy(markerHolder);
+        
     }
 }

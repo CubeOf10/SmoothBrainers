@@ -8,18 +8,22 @@ public class Entity : MonoBehaviour
     GameManager gameManager;
     Rigidbody rb;
     NavMeshAgent navMesh;
+    DragMe dragScript;
 
-    // Entity Health
+    //  Entity Health
     public float health = 100.0f;
     float maxHealth;
     public GameObject deathEffect;
     public GameObject deathSound;
 
-    // Movement
-    public GameObject target;
+    //  Movement
+    public Transform moveTarget;
+    public int moveTargetIndex = 0;
     public float fuel = 50.0f;
 
+    //  Weapons
     public float attackRange = 20.0f;
+    public GameObject target;
 
     [Header("Projectiles")]
     public GameObject projectilePrefab;
@@ -57,6 +61,7 @@ public class Entity : MonoBehaviour
         target = gameManager.targets[0];
         rb = GetComponent<Rigidbody>();
         navMesh = GetComponent<NavMeshAgent>();
+        dragScript = GetComponent<DragMe>();
 
         unitDisplay = unitDisplayCanvas.GetComponent<UnitDisplayController>();
         unitDisplay.setAction(EntityBehaviours.Idle.ToString());
@@ -92,9 +97,34 @@ public class Entity : MonoBehaviour
         unitDisplay.setAction(EntityBehaviours.Idle.ToString());
     }
 
+    //  User dragging their entity over the map will place markers every half second,
+    //  if far enough from the previous point
+    //  The unit will follow the path laid out by these points in this function, 
+    //  by moving to the next in sequence until finished
     protected virtual void Follow()
     {
         unitDisplay.setAction(EntityBehaviours.Follow.ToString());
+        
+        //Reset Position
+        
+        //Get first point
+        moveTarget = dragScript.getMarkerHolder().GetChild(moveTargetIndex);
+        Debug.Log(Vector3.Distance(transform.position, moveTarget.position));
+        
+        if(Vector3.Distance(transform.position, moveTarget.position) > 0.03f)
+        {
+            navMesh.destination = moveTarget.transform.position;
+            moveTarget.transform.gameObject.GetComponent<MeshRenderer>().material.color = new Color(1, 0, 0, 1);
+        }
+        else if(moveTargetIndex < dragScript.getMarkerHolder().childCount)
+        {
+            moveTarget.transform.gameObject.GetComponent<MeshRenderer>().material.color = new Color(0, 0, 0, 1);
+            moveTargetIndex++;
+        }
+        else
+        {
+            entityBehaviour = EntityBehaviours.Attacking;
+        }
     }
 
     // User chooses their entity -> chooses an enemy entity to attack -> move towards
@@ -188,5 +218,10 @@ public class Entity : MonoBehaviour
         } 
         
         unitDisplay.setHealth(health / maxHealth);
+    }
+    
+    void OnDestroy()
+    {
+        gameManager.units.Remove(transform.gameObject);
     }
 }
