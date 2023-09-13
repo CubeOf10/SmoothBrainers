@@ -111,5 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa6787db1baf284193aa5042fcca8bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxTimer: 1
+  currentTimer: 0
+  withinButton: 0
+  pressable: 1
   buttonEffect: {fileID: 0}
   visualEffect: {fileID: 0}

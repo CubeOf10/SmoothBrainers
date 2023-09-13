@@ -35,7 +35,7 @@ public class HoldWithinButton : MonoBehaviour
         }
         
         Color newColor = outerButton.color;
-        newColor.a = Mathf.Lerp(1.0f, 0.0f, currentTimer / maxTimer);
+        newColor.a = Mathf.Lerp(0.75f, 0.0f, currentTimer / maxTimer);
         outerButton.color = newColor;
 
         visualEffect.transform.localScale = Vector3.Lerp(initialSmallSize, new Vector3(1, 1, 1), currentTimer / maxTimer);

@@ -7,6 +7,11 @@ public class SpawnNewUnit : MonoBehaviour
     public Transform spawnPoint;
     public GameObject unitToSpawn;
     public GameObject currentUnit;
+    GameManager gameManager;
+    void Start()
+    {
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+    }
     void OnTriggerExit(Collider other)
     {
         if(other.tag == unitToSpawn.tag && other != currentUnit)
@@ -15,6 +20,8 @@ public class SpawnNewUnit : MonoBehaviour
             currentUnit = newUnit;
             
             other.transform.parent = null;
+
+            gameManager.GetComponent<GameManager>().units.Add(newUnit);
         }
     }
 }
