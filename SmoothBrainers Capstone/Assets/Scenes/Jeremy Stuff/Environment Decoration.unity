@@ -2685,7 +2685,7 @@ GameObject:
   - component: {fileID: 330448187}
   - component: {fileID: 330448188}
   m_Layer: 0
-  m_Name: Tree Box (3)
+  m_Name: Barrel Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2732,7 +2732,7 @@ GameObject:
   - component: {fileID: 333737421}
   - component: {fileID: 333737422}
   m_Layer: 0
-  m_Name: Tree Box (6)
+  m_Name: Bridge Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4251,7 +4251,7 @@ GameObject:
   - component: {fileID: 626597536}
   - component: {fileID: 626597537}
   m_Layer: 0
-  m_Name: Tree Box (7)
+  m_Name: Hut Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9959,7 +9959,7 @@ GameObject:
   - component: {fileID: 1479930385}
   - component: {fileID: 1479930386}
   m_Layer: 0
-  m_Name: Tree Box (4)
+  m_Name: Tower Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10555,7 +10555,7 @@ GameObject:
   - component: {fileID: 1525605630}
   - component: {fileID: 1525605631}
   m_Layer: 0
-  m_Name: Tree Box (5)
+  m_Name: Mountain Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14022,7 +14022,7 @@ GameObject:
   - component: {fileID: 2030390013}
   - component: {fileID: 2030390014}
   m_Layer: 0
-  m_Name: Tree Box (1)
+  m_Name: Barricade Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

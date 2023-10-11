@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -5640856633364604363}
   - component: {fileID: 3535523220262330644}
   - component: {fileID: -8008924600160914152}
+  - component: {fileID: -3257309446613692962}
   m_Layer: 0
   m_Name: Bridge
   m_TagString: Environment
@@ -202,33 +203,9 @@ MonoBehaviour:
   _whenUnselect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Oculus.Interaction.AudioTrigger, Oculus.Interaction.Samples
-        m_MethodName: PlayAudio
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LetMeGrabAIs, Assembly-CSharp
-        m_MethodName: Dropped
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DragMe, Assembly-CSharp
-        m_MethodName: PutDown
+      - m_Target: {fileID: -3257309446613692962}
+        m_TargetAssemblyTypeName: RemainAtHeight, Assembly-CSharp
+        m_MethodName: Released
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -260,6 +237,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-3257309446613692962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5307876764260526633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38af3e1393ed9df47ac6c595c05890c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0.05
 --- !u!1 &6691634651923006506
 GameObject:
   m_ObjectHideFlags: 0
