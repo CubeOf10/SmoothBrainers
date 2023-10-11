@@ -14,7 +14,8 @@ public class SpawnNewUnit : MonoBehaviour
     }
     void OnTriggerExit(Collider other)
     {
-        if(other.tag == unitToSpawn.tag && other != currentUnit)
+        Debug.Log(other);
+        if(other.tag == unitToSpawn.tag && other.gameObject == currentUnit)
         {
             GameObject newUnit = Instantiate(unitToSpawn, spawnPoint);
             currentUnit = newUnit;
