@@ -17,8 +17,19 @@ public class ListOfEntities : MonoBehaviour
         {
             if(item.name == itemName)
             {
-                Instantiate(item, spawnTransform);
-                
+                GameObject newItem = Instantiate(item, spawnTransform);
+            }
+        }
+    }
+    public void RemoveAllItems(string tagName)
+    {
+        foreach(Transform item in spawnTransform)
+        {
+            Debug.Log("Found:" + item.name + " " + item.tag);
+            if(item.tag == tagName)
+            {
+                Debug.Log("Matched");
+                Destroy(item.gameObject);
             }
         }
     }

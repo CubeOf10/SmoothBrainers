@@ -96,4 +96,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a23057481323b49bd7e03fe44837e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deleteTimer: 2
+  deleteTimer: 1
