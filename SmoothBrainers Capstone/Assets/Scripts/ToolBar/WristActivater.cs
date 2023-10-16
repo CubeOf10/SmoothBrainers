@@ -11,6 +11,8 @@ public class WristActivater : MonoBehaviour
     bool ready;
     bool index;
     bool middle;
+    [Header("Palm Menu")]
+    public GameObject palmMenu;
     void Start()
     {
         rightIndexFinger = GameObject.Find("r_index_finger_pad_marker");
@@ -43,7 +45,9 @@ public class WristActivater : MonoBehaviour
 
     void ActivateMenu()
     {
-        Debug.Log("Menu Activated");
+        if(palmMenu.activeInHierarchy)
+            palmMenu.SetActive(false);
+        else palmMenu.SetActive(true);
     }
 
     void OnTriggerExit(Collider other)
