@@ -9,6 +9,10 @@ TagManager:
   - Tank
   - PlayerHands
   - Environment
+  - Agamotto
+  - PoolBall
+  - Projectile
+  - Weather
   layers:
   - Default
   - TransparentFX
