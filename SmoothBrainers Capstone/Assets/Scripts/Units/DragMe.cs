@@ -8,14 +8,15 @@ public class DragMe : MonoBehaviour
 {
     public bool BeingDragged = false;
     public List<Vector3> pathPoints;
-    public float distanceToPlane = 0.4f;
     public float timeBetweenPoints = 0.5f;
     public float distanceBetweenPoints = 0.2f;
     public GameObject marker;
+    public GameObject desk;
     public GameObject groundPos;
     GameObject markerHolder;
     void Start()
     {
+        desk = GameObject.Find("Terrain");
         markerHolder = new GameObject();
         markerHolder.name = "Marker Holder";
     }
@@ -26,17 +27,20 @@ public class DragMe : MonoBehaviour
     IEnumerator PlacePoint()
     {
         yield return new WaitForSeconds(timeBetweenPoints);
-        if(BeingDragged)
+        if(AboveTable(transform.position))
         {
-            if(Vector2.Distance(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(
-                                    pathPoints[pathPoints.Count-1].x, 
-                                    pathPoints[pathPoints.Count-1].y, 
-                                    pathPoints[pathPoints.Count-1].z)) >
-                                    distanceBetweenPoints){
+            if(BeingDragged)
+            {
+                if(Vector2.Distance(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(
+                                        pathPoints[pathPoints.Count-1].x, 
+                                        pathPoints[pathPoints.Count-1].y, 
+                                        pathPoints[pathPoints.Count-1].z)) >
+                                        distanceBetweenPoints){
 
-                GameObject newMarker = Instantiate(marker, markerHolder.transform);
-                newMarker.transform.position = findTable(transform.position); 
-                pathPoints.Add(findTable(transform.position));
+                    GameObject newMarker = Instantiate(marker, markerHolder.transform);
+                    newMarker.transform.position = findTable(transform.position); 
+                    pathPoints.Add(findTable(transform.position));
+                }
             }
         }
         if(!BeingDragged)
@@ -58,17 +62,33 @@ public class DragMe : MonoBehaviour
             for(int i = 0; i < hits.Length; i++)
             {
                 RaycastHit hit = hits[i];
-                //print("hit " + hit.transform.name + hit.distance);
+                
 
-                if(hit.transform.name == "Terrain")
+                if(hit.transform.gameObject == desk)
                 {
-                //Debug.Log("Hit Terrain");
                     return new Vector3(originalPos.x, hit.transform.position.y, originalPos.z);
                 }
             }
         }
         return new Vector3(originalPos.x, originalPos.y, originalPos.z);
     }
+    bool AboveTable(Vector3 entityPos)
+    {
+        RaycastHit[] hits;
+        hits = Physics.RaycastAll(entityPos, -Vector3.up);
+        {   
+            for(int i = 0; i < hits.Length; i++)
+            {
+                RaycastHit hit = hits[i];
+                if(hit.transform.gameObject == desk)
+                    return true;
+            }
+        }
+        return false;
+    }
+    
+        
+    
     public void PickedUp()
     {
         BeingDragged = true;
@@ -81,7 +101,6 @@ public class DragMe : MonoBehaviour
     }
     void OnDestroy()
     {
-        Destroy(markerHolder);
-        
+        Destroy(markerHolder); 
     }
 }

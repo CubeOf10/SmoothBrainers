@@ -25,7 +25,6 @@ public class ListOfEntities : MonoBehaviour
     {
         foreach(Transform item in spawnTransform)
         {
-            Debug.Log("Found:" + item.name + " " + item.tag);
             if(item.tag == tagName)
             {
                 Debug.Log("Matched");

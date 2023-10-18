@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RemainAtHeight : MonoBehaviour
 {
+    public bool grounded = true;
     public float offset;
     Quaternion startRot;
     GameObject terrain;
@@ -16,7 +17,11 @@ public class RemainAtHeight : MonoBehaviour
 
     public void Released()
     {
-        transform.position = new Vector3(transform.position.x, terrain.transform.position.y + offset, transform.position.z);
+        if(grounded)
+        {
+            transform.position = new Vector3(transform.position.x, terrain.transform.position.y + offset, transform.position.z);
+        }
+        
         transform.rotation = startRot;
     }
 }
