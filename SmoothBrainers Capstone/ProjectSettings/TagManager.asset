@@ -13,6 +13,7 @@ TagManager:
   - PoolBall
   - Projectile
   - Weather
+  - Manual
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Flying
   - 
   - 
   - 

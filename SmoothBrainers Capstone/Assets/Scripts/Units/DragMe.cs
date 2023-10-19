@@ -38,7 +38,11 @@ public class DragMe : MonoBehaviour
                                         distanceBetweenPoints){
 
                     GameObject newMarker = Instantiate(marker, markerHolder.transform);
-                    newMarker.transform.position = findTable(transform.position); 
+                    if(gameObject.GetComponent<FollowPath>() != null)
+                        newMarker.transform.position = findTable(transform.position); 
+                    else
+                        newMarker.transform.position = transform.position;
+
                     pathPoints.Add(findTable(transform.position));
                 }
             }
@@ -53,8 +57,8 @@ public class DragMe : MonoBehaviour
 
     Vector3 findTable(Vector3 originalPos)
     {
-        GameObject groundMarker = Instantiate(groundPos);
-        groundMarker.transform.position = transform.position;
+        //GameObject groundMarker = Instantiate(groundPos);
+        //groundMarker.transform.position = transform.position;
 
         RaycastHit[] hits;
         hits = Physics.RaycastAll(originalPos, -Vector3.up);

@@ -7,16 +7,16 @@ public class LetMeGrabAIs : MonoBehaviour
     public int menuFadeDelay;
     public float menuFadeSpeed;
     OVRGrabbable grabScript;
-    Tank tankScript;
+    //Tank tankScript;
     NavMeshAgent agentComp;
-    Canvas unitMenu;
+    //Canvas unitMenu;
     // Start is called before the first frame update
     void Start()
     {
         agentComp = gameObject.GetComponent<NavMeshAgent>();
-        tankScript = gameObject.GetComponent<Tank>();
+        //tankScript = gameObject.GetComponent<Tank>();
         grabScript = gameObject.GetComponent<OVRGrabbable>();
-        unitMenu = tankScript.unitDisplayCanvas;
+        //unitMenu = tankScript.unitDisplayCanvas;
     }
 
     // Update is called once per frame
@@ -25,12 +25,12 @@ public class LetMeGrabAIs : MonoBehaviour
         agentComp.enabled = false;
         agentComp.enabled = false;
 
-        unitMenu.GetComponent<CanvasGroup>().alpha = 100;
+        //unitMenu.GetComponent<CanvasGroup>().alpha = 100;
     }
     public void Dropped()
     {
         agentComp.enabled = true;
-        tankScript.enabled = true;
+        //tankScript.enabled = true;
     
         StartCoroutine(FadeUnitMenu());
     }
@@ -38,12 +38,12 @@ public class LetMeGrabAIs : MonoBehaviour
     private IEnumerator FadeUnitMenu()
     {
         yield return new WaitForSeconds(menuFadeDelay);
-        StartCoroutine(ReduceAlpha());
+        //StartCoroutine(ReduceAlpha());
     }
 
-    private IEnumerator ReduceAlpha()
+    /*private IEnumerator ReduceAlpha()
     {
-        unitMenu.GetComponent<CanvasGroup>().alpha -= menuFadeSpeed * Time.deltaTime;
+       // unitMenu.GetComponent<CanvasGroup>().alpha -= menuFadeSpeed * Time.deltaTime;
 
         if(unitMenu.GetComponent<CanvasGroup>().alpha <= 0)
         {
@@ -52,5 +52,5 @@ public class LetMeGrabAIs : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
         StartCoroutine(ReduceAlpha());
-    }
+    }*/
 }

@@ -105,11 +105,9 @@ public class Entity : MonoBehaviour
     {
         unitDisplay.setAction(EntityBehaviours.Follow.ToString());
         
-        //Reset Position
         
         //Get first point
         moveTarget = dragScript.getMarkerHolder().GetChild(moveTargetIndex);
-        Debug.Log(Vector3.Distance(transform.position, moveTarget.position));
         
         if(Vector3.Distance(transform.position, moveTarget.position) > 0.03f)
         {
@@ -123,7 +121,7 @@ public class Entity : MonoBehaviour
         }
         else
         {
-            entityBehaviour = EntityBehaviours.Attacking;
+            entityBehaviour = EntityBehaviours.Idle;
         }
     }
 
