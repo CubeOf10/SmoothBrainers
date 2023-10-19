@@ -38,8 +38,10 @@ public class DragMe : MonoBehaviour
                                         distanceBetweenPoints){
 
                     GameObject newMarker = Instantiate(marker, markerHolder.transform);
-                    newMarker.transform.position = findTable(transform.position); 
-                    newMarker.GetComponent<WaypointHeight>().height = transform.position.y - desk.transform.position.y;
+                    if(gameObject.GetComponent<FollowPath>() != null)
+                        newMarker.transform.position = findTable(transform.position); 
+                    else
+                        newMarker.transform.position = transform.position;
 
                     pathPoints.Add(findTable(transform.position));
                 }

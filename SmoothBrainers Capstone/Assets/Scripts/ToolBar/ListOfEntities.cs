@@ -20,7 +20,8 @@ public class ListOfEntities : MonoBehaviour
             if(item.name == itemName)
             {
                 GameObject newItem = Instantiate(item, spawnTransform);
-                gameManager.units.Add(newItem);
+                if(item.tag == "Manual" || item.tag == "AI")
+                    gameManager.units.Add(newItem);
             }
         }
     }
@@ -32,7 +33,7 @@ public class ListOfEntities : MonoBehaviour
             {
                 if(gameManager.units.Contains(item.gameObject))
                     gameManager.units.Remove(item.gameObject);
-                    
+
                 Destroy(item.gameObject);
             }
         }

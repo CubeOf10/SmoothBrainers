@@ -14,17 +14,20 @@ public class PlayPaths : ButtonEffect
     {        
         foreach(GameObject unit in gameManager.GetComponent<GameManager>().units)
         {
-            unit.GetComponent<FollowPath>().moveTargetIndex = 0;
             if(unit.GetComponent<DragMe>().getMarkerHolder().childCount > 0)
             {
-                //
                 unit.transform.position = unit.GetComponent<DragMe>().getMarkerHolder().GetChild(0).transform.position;
-                
-                if(unit.GetComponent<FollowPath>().flyingType)
-                unit.GetComponent<NavMeshAgent>().baseOffset = 
-                    unit.GetComponent<DragMe>().getMarkerHolder().GetChild(0).GetComponent<WaypointHeight>().height;
-                
-                unit.GetComponent<FollowPath>().following = true;
+                if(unit.GetComponent<FollowPath>() != null)
+                {
+                    unit.GetComponent<FollowPath>().moveTargetIndex = 0;
+                    unit.GetComponent<FollowPath>().following = true;
+
+                }
+                else
+                {
+                    unit.GetComponent<GenericWayPointTraversal>().moveTargetIndex = 0;
+                    unit.GetComponent<GenericWayPointTraversal>().following = true;
+                }
             }
         }
     }
