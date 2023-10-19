@@ -1,9 +1,12 @@
+using RedGirafeGames.Agamotto.Demo.TowerDefenseDemo.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Pen : MonoBehaviour
 {
+    GameObject rightThumb;
+
     [Header("Pen Properties")]
     public Transform tip;
     public Material drawingMaterial;
@@ -12,27 +15,23 @@ public class Pen : MonoBehaviour
     public float penWidth = 0.01f;
     public Color[] penColors;
 
-    [Header("Hands & Grabbable")]
-    public OVRGrabber rightHand;
-    public OVRGrabber leftHand;
-    public OVRGrabbable grabbable;
-
     private LineRenderer currentDrawing;
     private int index;
     private int currentColorIndex;
+
+    private bool drawing = false;
 
     private void Start()
     {
         currentColorIndex = 0;
         tipMaterial.color = penColors[currentColorIndex];
+
+        rightThumb = GameObject.Find("r_thumb_finger_pad_marker");
     }
 
     private void Update()
     {
-        bool isGrabbed = grabbable.isGrabbed;
-        bool isRightHandDrawing = isGrabbed && grabbable.grabbedBy == rightHand && OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger);
-        bool isLeftHandDrawing = isGrabbed && grabbable.grabbedBy == leftHand && OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger);
-        if (isRightHandDrawing || isLeftHandDrawing)
+        if (drawing)
         {
             Draw();
         }
@@ -40,10 +39,10 @@ public class Pen : MonoBehaviour
         {
             currentDrawing = null;
         }
-        else if (OVRInput.GetDown(OVRInput.Button.One))
-        {
-            SwitchColor();
-        }
+        //else if (OVRInput.GetDown(OVRInput.Button.One))
+        //{
+        //    SwitchColor();
+        //}
     }
 
     private void Draw()
@@ -61,7 +60,7 @@ public class Pen : MonoBehaviour
         else
         {
             var currentPos = currentDrawing.GetPosition(index);
-            if (Vector3.Distance(currentPos, tip.position) > 0.01f)
+            if (Vector3.Distance(currentPos, tip.position) > 0f)
             {
                 index++;
                 currentDrawing.positionCount = index + 1;
@@ -81,5 +80,18 @@ public class Pen : MonoBehaviour
             currentColorIndex++;
         }
         tipMaterial.color = penColors[currentColorIndex];
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.name == rightThumb.name)
+        {
+            drawing = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        drawing = false;
     }
 }
