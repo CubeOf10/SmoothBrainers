@@ -5,9 +5,11 @@ using UnityEngine;
 public class ListOfEntities : MonoBehaviour
 {
     Transform spawnTransform;
+    GameManager gameManager;
     public List<GameObject> itemList = new List<GameObject>();
     void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         spawnTransform = GameObject.Find("SpawnPoint").transform;   
     }
 
@@ -18,6 +20,7 @@ public class ListOfEntities : MonoBehaviour
             if(item.name == itemName)
             {
                 GameObject newItem = Instantiate(item, spawnTransform);
+                gameManager.units.Add(newItem);
             }
         }
     }
@@ -27,7 +30,9 @@ public class ListOfEntities : MonoBehaviour
         {
             if(item.tag == tagName)
             {
-                Debug.Log("Matched");
+                if(gameManager.units.Contains(item.gameObject))
+                    gameManager.units.Remove(item.gameObject);
+                    
                 Destroy(item.gameObject);
             }
         }

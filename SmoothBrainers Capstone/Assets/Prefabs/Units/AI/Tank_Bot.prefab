@@ -1440,7 +1440,7 @@ GameObject:
   - component: {fileID: 2628182296468574326}
   - component: {fileID: 2027254165503215283}
   m_Layer: 0
-  m_Name: Tank
+  m_Name: Tank_Bot
   m_TagString: Tank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1714,10 +1714,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BeingDragged: 0
   pathPoints: []
-  distanceToPlane: 0.4
   timeBetweenPoints: 1
   distanceBetweenPoints: 0.05
   marker: {fileID: 8331191039604317818, guid: 655ed1d21621b6d4f85cc9df469b055c, type: 3}
+  desk: {fileID: 0}
   groundPos: {fileID: 4997091452771180317, guid: ab4dfdba1a61b384cacebff79a3c3c47, type: 3}
 --- !u!96 &2027254165503215283
 TrailRenderer:
