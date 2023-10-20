@@ -111,14 +111,12 @@ public class Pen : MonoBehaviour
 
     private void ChangeWidth()
     {
-        Debug.Log("CHANGE WIDTH: " + penWidth);
         currentWidthIndex = (currentWidthIndex + 1) % penWidths.Length;
         penWidth = penWidths[currentWidthIndex];
     }
 
     private void ClearAll()
     {
-        Debug.Log("CLEAR ALL");
         if (drawings.Count  > 0)
         {
             foreach (var drawing in drawings)
@@ -131,7 +129,6 @@ public class Pen : MonoBehaviour
 
     private void UndoAction()
     {
-        Debug.Log("UNDO ACTION");
         if (drawings.Count > 0)
         {
             int lastIndex = drawings.Count - 1;
@@ -142,7 +139,6 @@ public class Pen : MonoBehaviour
 
     private void ShowDrawing()
     {
-        Debug.Log("SHOW DRAWINGS");
         if (drawings.Count > 0 && !showDrawing)
         {
             foreach (var drawing in drawings)
@@ -155,7 +151,6 @@ public class Pen : MonoBehaviour
 
     private void HideDrawing()
     {
-        Debug.Log("HIDE DRAWINGS");
         if (drawings.Count > 0 && showDrawing)
         {
             foreach (var drawing in drawings)
