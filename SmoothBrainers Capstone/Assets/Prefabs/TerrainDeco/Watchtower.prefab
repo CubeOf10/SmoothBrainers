@@ -14,11 +14,10 @@ GameObject:
   - component: {fileID: -7897391955730560717}
   - component: {fileID: -5595474937234228796}
   - component: {fileID: 2019853247490016261}
-  - component: {fileID: 2782513952501864093}
   - component: {fileID: 8734187498724195858}
   m_Layer: 0
   m_Name: Watchtower
-  m_TagString: Environment
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,22 +151,6 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
---- !u!208 &2782513952501864093
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547532089082925244}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 0.03, y: 0.05, z: 0.03}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!114 &8734187498724195858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38af3e1393ed9df47ac6c595c05890c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 0.05
+  grounded: 1
+  offset: 0.03
 --- !u!1 &2041281529394785064
 GameObject:
   m_ObjectHideFlags: 0

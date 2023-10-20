@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Helicopter : Entity
+public class AerialUnit : Entity
 {
 
     // Start is called before the first frame update

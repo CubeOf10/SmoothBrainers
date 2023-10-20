@@ -15,6 +15,7 @@ TagManager:
   - Weather
   - Manual
   - Automatic
+  - Target
   layers:
   - Default
   - TransparentFX

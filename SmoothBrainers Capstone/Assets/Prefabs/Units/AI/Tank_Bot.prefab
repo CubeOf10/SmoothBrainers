@@ -1434,13 +1434,13 @@ GameObject:
   - component: {fileID: 2485936886226501634}
   - component: {fileID: 7027640779518143605}
   - component: {fileID: 8859898026063202266}
-  - component: {fileID: 4245044001439360309}
   - component: {fileID: -907629201119803839}
   - component: {fileID: 4741550774212799199}
   - component: {fileID: 2027254165503215283}
+  - component: {fileID: -540970895363015747}
   m_Layer: 0
   m_Name: Tank_Bot
-  m_TagString: Tank
+  m_TagString: Automatic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1636,33 +1636,6 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
---- !u!114 &4245044001439360309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2485936886226501662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e238a43b4df5a045bfd59024f94785d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 500
-  deathEffect: {fileID: 0}
-  deathSound: {fileID: 0}
-  moveTarget: {fileID: 0}
-  moveTargetIndex: 0
-  fuel: 50
-  attackRange: 0.5
-  target: {fileID: 0}
-  projectilePrefab: {fileID: 8798116132803841083, guid: bd109bbc87d37154bbe8bedb0e8f9c10, type: 3}
-  projectileSpawnPos: {fileID: 595331403542222966}
-  projectileAmount: 10
-  projectileFireRate: 7
-  projectileRegenRate: 5
-  unitDisplayCanvas: {fileID: 6607533231795082798}
-  entityBehaviour: 1
 --- !u!195 &-907629201119803839
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1670,8 +1643,8 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2485936886226501662}
-  m_Enabled: 0
-  m_AgentTypeID: 1479372276
+  m_Enabled: 1
+  m_AgentTypeID: 0
   m_Radius: 0.01
   m_Speed: 0.2
   m_Acceleration: 0.6
@@ -1807,6 +1780,34 @@ TrailRenderer:
   m_MinVertexDistance: 0.001
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &-540970895363015747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2485936886226501662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e238a43b4df5a045bfd59024f94785d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  deathEffect: {fileID: 0}
+  deathSound: {fileID: 0}
+  moveTarget: {fileID: 0}
+  moveTargetIndex: 0
+  fuel: 50
+  attackRange: 20
+  target: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  projectileSpawnPos: {fileID: 0}
+  projectileAmount: 10
+  projectileFireRate: 7
+  projectileRegenRate: 5
+  unitDisplay: {fileID: 2322256259005192763}
+  navMesh: {fileID: 1967021991584112904, guid: de53d24af6525d644886cd099ecfbde0, type: 3}
+  entityBehaviour: 0
 --- !u!1 &2485936886712013968
 GameObject:
   m_ObjectHideFlags: 0

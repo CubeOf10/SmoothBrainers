@@ -6235,9 +6235,10 @@ GameObject:
   - component: {fileID: 7928048339500442029}
   - component: {fileID: 3314356402862198234}
   - component: {fileID: 3930914360132658805}
-  - component: {fileID: 7494247371587727833}
   - component: {fileID: 5790370681285699356}
-  - component: {fileID: 2142359994555900366}
+  - component: {fileID: 1422092389172495155}
+  - component: {fileID: -5834495152712803316}
+  - component: {fileID: 2138182431658345680}
   m_Layer: 6
   m_Name: Drone_Bot
   m_TagString: Automatic
@@ -6337,7 +6338,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1422092389172495155}
         m_TargetAssemblyTypeName: LetMeGrabAIs, Assembly-CSharp
         m_MethodName: PickedUp
         m_Mode: 1
@@ -6349,7 +6350,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7494247371587727833}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DragMe, Assembly-CSharp
         m_MethodName: PickedUp
         m_Mode: 1
@@ -6376,7 +6377,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1422092389172495155}
         m_TargetAssemblyTypeName: LetMeGrabAIs, Assembly-CSharp
         m_MethodName: Dropped
         m_Mode: 1
@@ -6388,7 +6389,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7494247371587727833}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DragMe, Assembly-CSharp
         m_MethodName: PutDown
         m_Mode: 1
@@ -6436,25 +6437,6 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
---- !u!114 &7494247371587727833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7928048339500442033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a78e9043bfe10bd4ab4b509a418a73d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BeingDragged: 0
-  pathPoints: []
-  timeBetweenPoints: 0.3
-  distanceBetweenPoints: 0.05
-  marker: {fileID: 8331191039604317818, guid: 655ed1d21621b6d4f85cc9df469b055c, type: 3}
-  desk: {fileID: 0}
-  groundPos: {fileID: 4997091452771180317, guid: ab4dfdba1a61b384cacebff79a3c3c47, type: 3}
 --- !u!96 &5790370681285699356
 TrailRenderer:
   serializedVersion: 2
@@ -6563,7 +6545,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.001
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &2142359994555900366
+--- !u!114 &1422092389172495155
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6572,12 +6554,61 @@ MonoBehaviour:
   m_GameObject: {fileID: 7928048339500442033}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2263334a3c8e35e45a5ceedf3c4c2a35, type: 3}
+  m_Script: {fileID: 11500000, guid: 3593d0f0025ea4e4187b4ddc70cd4933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.05
+  menuFadeDelay: 0
+  menuFadeSpeed: 0
+--- !u!195 &-5834495152712803316
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928048339500442033}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.01
+  m_Speed: 0.2
+  m_Acceleration: 0.6
+  avoidancePriority: 50
+  m_AngularSpeed: 1
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.04
+  m_BaseOffset: 0.2
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 2
+--- !u!114 &2138182431658345680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928048339500442033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4714ba31a51bbc84088346a199ee5ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  deathEffect: {fileID: 0}
+  deathSound: {fileID: 0}
+  moveTarget: {fileID: 0}
   moveTargetIndex: 0
-  following: 0
+  fuel: 50
+  attackRange: 20
+  target: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  projectileSpawnPos: {fileID: 0}
+  projectileAmount: 10
+  projectileFireRate: 7
+  projectileRegenRate: 5
+  unitDisplay: {fileID: 7801228903974992788}
+  navMesh: {fileID: 7080136249737807379, guid: 0cd8c1655b21d2a4e817a044e677072d, type: 3}
+  entityBehaviour: 0
 --- !u!1 &7928048339954464063
 GameObject:
   m_ObjectHideFlags: 0
