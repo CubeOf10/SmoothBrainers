@@ -87,7 +87,7 @@ public class Entity : MonoBehaviour
         }
 
         unitDisplay.transform.LookAt(gameManager.Player.transform.position);
-        transform.Rotate(0, 180, 0);
+        //transform.Rotate(0, 180, 0);
         
         unitDisplay.setAcceleration(navMesh.acceleration);
     }
