@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ListOfEntities : MonoBehaviour
 {
+    [SerializeField]
     Transform spawnTransform;
     GameManager gameManager;
     public List<GameObject> itemList = new List<GameObject>();
@@ -33,6 +34,9 @@ public class ListOfEntities : MonoBehaviour
             {
                 if(gameManager.units.Contains(item.gameObject))
                     gameManager.units.Remove(item.gameObject);
+
+                if(gameManager.targets.Contains(item.gameObject))
+                    gameManager.targets.Remove(item.gameObject);
 
                 Destroy(item.gameObject);
             }
