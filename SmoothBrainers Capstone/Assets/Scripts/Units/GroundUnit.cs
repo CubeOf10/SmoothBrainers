@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tank : Entity
+public class GroundUnit : Entity
 {
 
     // Start is called before the first frame update

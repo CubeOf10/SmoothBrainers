@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Oculus.Interaction;
 using UnityEngine;
 
 public class GenericWayPointTraversal : MonoBehaviour
@@ -30,10 +31,10 @@ public class GenericWayPointTraversal : MonoBehaviour
             moveTarget = dragScript.getMarkerHolder().GetChild(moveTargetIndex);
             direction = moveTarget.position - transform.position;
 
-            //targetPosition = moveTarget.position;
-            //targetPosition.y = transform.position.y;
+            targetPosition = moveTarget.position;
+            targetPosition.y = transform.position.y;
 
-            transform.Translate(direction.normalized * speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, moveTarget.position, speed * Time.deltaTime);
 
             if (Vector3.Distance(transform.position, moveTarget.position) > 0.03f)
             {   

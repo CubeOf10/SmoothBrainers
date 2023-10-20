@@ -20,7 +20,7 @@ public class ListOfEntities : MonoBehaviour
             if(item.name == itemName)
             {
                 GameObject newItem = Instantiate(item, spawnTransform);
-                if(item.tag == "Manual" || item.tag == "AI")
+                if(item.tag == "Manual" || item.tag == "Automatic")
                     gameManager.units.Add(newItem);
             }
         }

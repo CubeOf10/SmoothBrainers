@@ -777,7 +777,6 @@ GameObject:
   - component: {fileID: 2132120083533406594}
   - component: {fileID: 5840227811307824407}
   - component: {fileID: -7102631413492954052}
-  - component: {fileID: 1447098713583685833}
   - component: {fileID: 7299706180343119258}
   m_Layer: 0
   m_Name: Village
@@ -915,22 +914,6 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
---- !u!208 &1447098713583685833
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8675589824201024890}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 0.03, y: 0.05, z: 0.03}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 0
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!114 &7299706180343119258
 MonoBehaviour:
   m_ObjectHideFlags: 0

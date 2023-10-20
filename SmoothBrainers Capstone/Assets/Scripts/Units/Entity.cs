@@ -7,7 +7,7 @@ public class Entity : MonoBehaviour
 {
     GameManager gameManager;
     Rigidbody rb;
-    NavMeshAgent navMesh;
+    
     DragMe dragScript;
 
     //  Entity Health
@@ -23,7 +23,7 @@ public class Entity : MonoBehaviour
 
     //  Weapons
     public float attackRange = 20.0f;
-    public GameObject target;
+    public GameObject target = null;
 
     [Header("Projectiles")]
     public GameObject projectilePrefab;
@@ -36,8 +36,8 @@ public class Entity : MonoBehaviour
     //private float projectileRegenTimer;
     //public float projectileMaxAmount = 10;
 
-    UnitDisplayController unitDisplay;
-    public Canvas unitDisplayCanvas;
+    public UnitDisplayController unitDisplay;
+    public NavMeshAgent navMesh;
     // Entity FSM Enumerator
     public enum EntityBehaviours
     {
@@ -58,12 +58,11 @@ public class Entity : MonoBehaviour
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
-        target = gameManager.targets[0];
-        rb = GetComponent<Rigidbody>();
-        navMesh = GetComponent<NavMeshAgent>();
-        dragScript = GetComponent<DragMe>();
+        //target = gameManager.targets[0];
+        rb = gameObject.GetComponent<Rigidbody>();
+        
+        dragScript = gameObject.GetComponent<DragMe>();
 
-        unitDisplay = unitDisplayCanvas.GetComponent<UnitDisplayController>();
         unitDisplay.setAction(EntityBehaviours.Idle.ToString());
     }
 
@@ -89,12 +88,13 @@ public class Entity : MonoBehaviour
 
         unitDisplay.transform.LookAt(gameManager.Player.transform.position);
         transform.Rotate(0, 180, 0);
+        
         unitDisplay.setAcceleration(navMesh.acceleration);
     }
 
     protected virtual void Idle()
     {
-        unitDisplay.setAction(EntityBehaviours.Idle.ToString());
+//        unitDisplay.setAction(EntityBehaviours.Idle.ToString());
     }
 
     //  User dragging their entity over the map will place markers every half second,

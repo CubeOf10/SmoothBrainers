@@ -5691,11 +5691,10 @@ GameObject:
   - component: {fileID: 5963431247388148348}
   - component: {fileID: 1967021991584112904}
   - component: {fileID: 3019223016091782550}
-  - component: {fileID: 5499490836569782079}
   - component: {fileID: 8361338379467170298}
   m_Layer: 0
   m_Name: Infantry_Bot
-  m_TagString: Tank
+  m_TagString: Automatic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5804,7 +5803,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5499490836569782079}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DragMe, Assembly-CSharp
         m_MethodName: PickedUp
         m_Mode: 1
@@ -5843,7 +5842,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5499490836569782079}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DragMe, Assembly-CSharp
         m_MethodName: PutDown
         m_Mode: 1
@@ -5898,7 +5897,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5356154852397901655}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e238a43b4df5a045bfd59024f94785d, type: 3}
   m_Name: 
@@ -5916,7 +5915,8 @@ MonoBehaviour:
   projectileAmount: 10
   projectileFireRate: 7
   projectileRegenRate: 5
-  unitDisplayCanvas: {fileID: 3718174971483599207}
+  unitDisplay: {fileID: 5193072424007351666}
+  navMesh: {fileID: 1967021991584112904}
   entityBehaviour: 1
 --- !u!195 &1967021991584112904
 NavMeshAgent:
@@ -5925,7 +5925,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5356154852397901655}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.01
   m_Speed: 0.01
@@ -5937,7 +5937,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1
-  m_BaseOffset: 0
+  m_BaseOffset: 0.02
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
 --- !u!114 &3019223016091782550
@@ -5954,25 +5954,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuFadeDelay: 4
   menuFadeSpeed: 0.2
---- !u!114 &5499490836569782079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5356154852397901655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a78e9043bfe10bd4ab4b509a418a73d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BeingDragged: 0
-  pathPoints: []
-  timeBetweenPoints: 1
-  distanceBetweenPoints: 0.05
-  marker: {fileID: 8331191039604317818, guid: 655ed1d21621b6d4f85cc9df469b055c, type: 3}
-  desk: {fileID: 0}
-  groundPos: {fileID: 4997091452771180317, guid: ab4dfdba1a61b384cacebff79a3c3c47, type: 3}
 --- !u!96 &8361338379467170298
 TrailRenderer:
   serializedVersion: 2

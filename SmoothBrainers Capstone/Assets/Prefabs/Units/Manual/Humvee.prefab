@@ -5899,7 +5899,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5356154852397901655}
   m_Enabled: 0
-  m_AgentTypeID: 1479372276
+  m_AgentTypeID: 0
   m_Radius: 0.01
   m_Speed: 0.25
   m_Acceleration: 0.6
@@ -6066,7 +6066,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9f088ff4f4777478412909d67f215c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flyingType: 0
   moveTargetIndex: 0
   following: 0
 --- !u!1 &5356154852952617945
