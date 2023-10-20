@@ -96,7 +96,7 @@ public class Pen : MonoBehaviour
         }
     }
 
-    private void SwitchColor()
+    public void SwitchColor()
     {
         if (currentColorIndex == penColors.Length - 1)
         {
@@ -109,13 +109,13 @@ public class Pen : MonoBehaviour
         tipMaterial.color = penColors[currentColorIndex];
     }
 
-    private void ChangeWidth()
+    public void ChangeWidth()
     {
         currentWidthIndex = (currentWidthIndex + 1) % penWidths.Length;
         penWidth = penWidths[currentWidthIndex];
     }
 
-    private void ClearAll()
+    public void ClearAll()
     {
         if (drawings.Count  > 0)
         {
@@ -127,7 +127,7 @@ public class Pen : MonoBehaviour
         }
     }
 
-    private void UndoAction()
+    public void UndoAction()
     {
         if (drawings.Count > 0)
         {
@@ -137,7 +137,7 @@ public class Pen : MonoBehaviour
         }
     }
 
-    private void ShowDrawing()
+    public void ShowDrawing()
     {
         if (drawings.Count > 0 && !showDrawing)
         {
@@ -149,7 +149,7 @@ public class Pen : MonoBehaviour
         }
     }
 
-    private void HideDrawing()
+    public void HideDrawing()
     {
         if (drawings.Count > 0 && showDrawing)
         {
