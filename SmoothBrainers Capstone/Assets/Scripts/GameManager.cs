@@ -25,9 +25,9 @@ public class GameManager : MonoBehaviour
     {
         targets = new List<GameObject>();
         
-        foreach(GameObject child in spawnpoint)
-            if(child.tag == "Target")
-                Destroy(child);
+        foreach(Transform child in spawnpoint.transform)
+            if(child.gameObject.tag == "Target")
+                Destroy(child.gameObject);
         
     }
 }
