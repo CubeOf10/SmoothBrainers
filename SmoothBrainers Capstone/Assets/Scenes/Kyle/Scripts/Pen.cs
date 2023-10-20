@@ -13,7 +13,7 @@ public class Pen : MonoBehaviour
     public Material tipMaterial;
     [Range(0.01f, 0.1f)]
     public float penWidth = 0.01f;
-    float[] penWidths = { 0.01f, 0.05f, 0.1f };
+    float[] penWidths = { 0.01f, 0.02f, 0.04f };
     int currentWidthIndex = 0;
     public Color[] penColors;
 
