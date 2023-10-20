@@ -23,7 +23,8 @@ public class Pen : MonoBehaviour
     private int currentColorIndex;
 
     private bool drawing = false;
-    private bool showDrawing = false;
+    private bool showDrawing = true;
+    private bool startDrawing = false;
 
     private void Start()
     {
@@ -44,30 +45,30 @@ public class Pen : MonoBehaviour
             currentDrawing = null;
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            ClearAll();
-        }
-        else if (Input.GetKeyDown(KeyCode.U))
-        {
-            UndoAction();
-        }
-        else if (Input.GetKeyDown(KeyCode.O))
-        {
-            ShowDrawing();
-        }
-        else if (Input.GetKeyDown(KeyCode.P))
-        {
-            HideDrawing();
-        }
-        else if (Input.GetKeyDown(KeyCode.T))
-        {
-            SwitchColor();
-        }
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            ChangeWidth();
-        }
+        //if (Input.GetKeyDown(KeyCode.C))
+        //{
+        //    ClearAll();
+        //}
+        //else if (Input.GetKeyDown(KeyCode.U))
+        //{
+        //    UndoAction();
+        //}
+        //else if (Input.GetKeyDown(KeyCode.O))
+        //{
+        //    ShowDrawing();
+        //}
+        //else if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    HideDrawing();
+        //}
+        //else if (Input.GetKeyDown(KeyCode.T))
+        //{
+        //    SwitchColor();
+        //}
+        //else if (Input.GetKeyDown(KeyCode.W))
+        //{
+        //    ChangeWidth();
+        //}
     }
 
     private void Draw()
@@ -137,33 +138,45 @@ public class Pen : MonoBehaviour
         }
     }
 
-    public void ShowDrawing()
+    public void ShowHideDrawing()
     {
-        if (drawings.Count > 0 && !showDrawing)
+        if (drawings.Count > 0)
         {
-            foreach (var drawing in drawings)
+            if (showDrawing)
             {
-                drawing.enabled = true;
+                foreach (var drawing in drawings)
+                {
+                    drawing.enabled = false;
+                }
+                showDrawing = false;
             }
-            showDrawing = true;
+            else
+            {
+                foreach (var drawing in drawings)
+                {
+                    drawing.enabled = true;
+                }
+                showDrawing = true;
+            }
         }
     }
 
-    public void HideDrawing()
+    public void StartStopDrawing()
     {
-        if (drawings.Count > 0 && showDrawing)
+        if (!startDrawing)
         {
-            foreach (var drawing in drawings)
-            {
-                drawing.enabled = false;
-            }
-            showDrawing = false;
+            startDrawing = true;
+        }
+        else
+        {
+            startDrawing = false;
         }
     }
+
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.name == rightThumb.name)
+        if (other.gameObject.name == rightThumb.name && startDrawing == true)
         {
             drawing = true;
         }
