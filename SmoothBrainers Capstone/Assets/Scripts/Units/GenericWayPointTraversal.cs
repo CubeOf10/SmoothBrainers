@@ -35,7 +35,9 @@ public class GenericWayPointTraversal : MonoBehaviour
             targetPosition.y = transform.position.y;
 
             transform.position = Vector3.MoveTowards(transform.position, moveTarget.position, speed * Time.deltaTime);
-
+            
+            Vector3 faceProperly = new Vector3(moveTarget.position.x, transform.position.y, moveTarget.position.z);
+            transform.LookAt(faceProperly);
             if (Vector3.Distance(transform.position, moveTarget.position) > 0.03f)
             {   
                 moveTarget.transform.gameObject.GetComponent<MeshRenderer>().material.color = new Color(1, 0, 0, 1);

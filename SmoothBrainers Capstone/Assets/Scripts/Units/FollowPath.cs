@@ -27,11 +27,10 @@ public class FollowPath : MonoBehaviour
                                 new Vector2(moveTarget.position.x, moveTarget.position.z)) > 0.03f)
             {
                 navMesh.destination = moveTarget.transform.position;
+                transform.LookAt(moveTarget.transform.position);
                 moveTarget.transform.gameObject.GetComponent<MeshRenderer>().material.color = new Color(1, 0, 0, 1);
 
             }
-            
-
             else if(moveTargetIndex < dragScript.getMarkerHolder().childCount)
             {
                 moveTarget.transform.gameObject.GetComponent<MeshRenderer>().material.color = new Color(0, 1, 0, 1);
@@ -42,9 +41,9 @@ public class FollowPath : MonoBehaviour
             if(moveTargetIndex == dragScript.getMarkerHolder().childCount)
             {
                 following = false;
-                foreach(GameObject marker in dragScript.getMarkerHolder())
+                foreach(Transform marker in dragScript.getMarkerHolder())
                 {
-                    marker.GetComponent<MeshRenderer>().material.color = new Color(0, 0, 0, 1);
+                    marker.gameObject.GetComponent<MeshRenderer>().material.color = new Color(0, 0, 0, 1);
                 }
             }            
 
