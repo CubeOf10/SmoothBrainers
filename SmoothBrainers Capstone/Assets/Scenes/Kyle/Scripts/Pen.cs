@@ -13,13 +13,17 @@ public class Pen : MonoBehaviour
     public Material tipMaterial;
     [Range(0.01f, 0.1f)]
     public float penWidth = 0.01f;
+    float[] penWidths = { 0.01f, 0.05f, 0.1f };
+    int currentWidthIndex = 0;
     public Color[] penColors;
 
+    List<LineRenderer> drawings = new List<LineRenderer>();
     private LineRenderer currentDrawing;
     private int index;
     private int currentColorIndex;
 
     private bool drawing = false;
+    private bool showDrawing = false;
 
     private void Start()
     {
@@ -39,10 +43,31 @@ public class Pen : MonoBehaviour
         {
             currentDrawing = null;
         }
-        //else if (OVRInput.GetDown(OVRInput.Button.One))
-        //{
-        //    SwitchColor();
-        //}
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            ClearAll();
+        }
+        else if (Input.GetKeyDown(KeyCode.U))
+        {
+            UndoAction();
+        }
+        else if (Input.GetKeyDown(KeyCode.O))
+        {
+            ShowDrawing();
+        }
+        else if (Input.GetKeyDown(KeyCode.P))
+        {
+            HideDrawing();
+        }
+        else if (Input.GetKeyDown(KeyCode.T))
+        {
+            SwitchColor();
+        }
+        else if (Input.GetKeyDown(KeyCode.W))
+        {
+            ChangeWidth();
+        }
     }
 
     private void Draw()
@@ -56,6 +81,8 @@ public class Pen : MonoBehaviour
             currentDrawing.startWidth = currentDrawing.endWidth = penWidth;
             currentDrawing.positionCount = 1;
             currentDrawing.SetPosition(0, tip.position);
+
+            drawings.Add(currentDrawing);
         }
         else
         {
@@ -80,6 +107,63 @@ public class Pen : MonoBehaviour
             currentColorIndex++;
         }
         tipMaterial.color = penColors[currentColorIndex];
+    }
+
+    private void ChangeWidth()
+    {
+        Debug.Log("CHANGE WIDTH: " + penWidth);
+        currentWidthIndex = (currentWidthIndex + 1) % penWidths.Length;
+        penWidth = penWidths[currentWidthIndex];
+    }
+
+    private void ClearAll()
+    {
+        Debug.Log("CLEAR ALL");
+        if (drawings.Count  > 0)
+        {
+            foreach (var drawing in drawings)
+            {
+                Destroy(drawing.gameObject);
+            }
+            drawings.Clear();
+        }
+    }
+
+    private void UndoAction()
+    {
+        Debug.Log("UNDO ACTION");
+        if (drawings.Count > 0)
+        {
+            int lastIndex = drawings.Count - 1;
+            Destroy(drawings[lastIndex].gameObject);
+            drawings.RemoveAt(lastIndex);
+        }
+    }
+
+    private void ShowDrawing()
+    {
+        Debug.Log("SHOW DRAWINGS");
+        if (drawings.Count > 0 && !showDrawing)
+        {
+            foreach (var drawing in drawings)
+            {
+                drawing.enabled = true;
+            }
+            showDrawing = true;
+        }
+    }
+
+    private void HideDrawing()
+    {
+        Debug.Log("HIDE DRAWINGS");
+        if (drawings.Count > 0 && showDrawing)
+        {
+            foreach (var drawing in drawings)
+            {
+                drawing.enabled = false;
+            }
+            showDrawing = false;
+        }
     }
 
     private void OnTriggerStay(Collider other)
