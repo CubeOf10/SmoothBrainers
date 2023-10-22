@@ -168,6 +168,12 @@ public class Pen : MonoBehaviour
             startDrawing = false;
         }
     }
+    
+    // Definitely Stop drawing
+    public void StopDrawing()
+    {
+        startDrawing = false;
+    }
 
     private void OnTriggerStay(Collider other)
     {

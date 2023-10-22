@@ -86,7 +86,7 @@ public class Entity : MonoBehaviour
                 break;
         }
 
-        unitDisplay.transform.LookAt(gameManager.Player.transform.position);       
+        //unitDisplay.transform.LookAt(gameManager.Player.transform.position);       
         unitDisplay.setAcceleration(navMesh.acceleration);
     }
 

@@ -39,7 +39,7 @@ public class FollowPath : MonoBehaviour
             else if(moveTargetIndex < dragScript.getMarkerHolder().childCount)
             {
                 //Set target to black again
-                moveTarget.transform.gameObject.GetComponent<MeshRenderer>().material.color = new Color(0, 1, 0, 1);
+                moveTarget.transform.gameObject.GetComponent<MeshRenderer>().material.color = new Color(0, 0, 0, 1);
                 
                 //Find new target
                 moveTargetIndex++;
