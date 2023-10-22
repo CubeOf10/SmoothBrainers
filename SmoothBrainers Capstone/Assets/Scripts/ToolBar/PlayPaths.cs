@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-public class PlayPaths : ButtonEffect
+
+//Used to play the routes that entities have planned
+public class PlayPaths : MonoBehaviour
 {
     GameManager gameManager;
 
@@ -11,26 +13,32 @@ public class PlayPaths : ButtonEffect
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
-    public override void ButtonPressed()
+
+    //Play the dragged units animations
+    public void ButtonPressed()
     {        
         foreach(GameObject unit in gameManager.GetComponent<GameManager>().units)
         {
-            if(unit.tag == "Manual")
+            if(unit.tag == "Manual") //Only dragged units are tagged as manual
             {
-                if(unit.GetComponent<DragMe>().getMarkerHolder().childCount > 0)
+                if(unit.GetComponent<DragMe>().getMarkerHolder().childCount > 0) //Only play if the unit has a place to go to
                 {
-                    if(unit.transform.GetComponent<NavMeshAgent>()!=null)
+                    if(unit.transform.GetComponent<NavMeshAgent>()!=null) //Only ground units have nav-mesh agents
                     {
-                        unit.transform.GetComponent<NavMeshAgent>().enabled = false;
+
+                        //Teleport unit to beginning of path
+                        unit.transform.GetComponent<NavMeshAgent>().enabled = false; 
                         unit.transform.position = unit.GetComponent<DragMe>().getMarkerHolder().GetChild(0).transform.position;
                         unit.transform.GetComponent<NavMeshAgent>().enabled = true;
 
+                        //Begin following the path
                         unit.GetComponent<FollowPath>().moveTargetIndex = 0;
                         unit.GetComponent<FollowPath>().following = true;                
                     }
 
-                    else
+                    else //For the flying units
                     {
+                        //Reset position and begin follow
                         unit.transform.position = unit.GetComponent<DragMe>().getMarkerHolder().GetChild(0).transform.position;
                         unit.GetComponent<GenericWayPointTraversal>().moveTargetIndex = 0;
                         unit.GetComponent<GenericWayPointTraversal>().following = true; 
@@ -39,15 +47,17 @@ public class PlayPaths : ButtonEffect
             }
         }
     }
+
+    //Play the fully AI units - Find nearest target to move towards
     public void PlayAI()
     {
         foreach(GameObject AI_unit in gameManager.units)
         {
-            
-            if(AI_unit.tag == "Automatic")
+            if(AI_unit.tag == "Automatic") //Only AI's are tagged as Automatic
             {
-                Debug.Log(AI_unit.name);
-                float maxDistance = 1000;
+
+                //Finding nearest target to move to
+                float maxDistance = 1000;   
                 GameObject chosenTarget = null;
                 foreach(GameObject target in gameManager.targets)
                 {
@@ -57,6 +67,8 @@ public class PlayPaths : ButtonEffect
                         chosenTarget = target;
                     }
                 }
+
+                //If there's nothing, remain stationary
                 if(chosenTarget != null)
                     AI_unit.GetComponent<NavMeshAgent>().destination = chosenTarget.transform.position; 
 
