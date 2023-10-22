@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Used to turn the palm menu on and off. 
+// Done by pressing right index and right middle finger to the left wrist
+// Has a cool-down of two seconds to prevent menu flickering during activation   
 public class WristActivater : MonoBehaviour
 {
     GameObject rightMiddleFinger;
@@ -27,6 +30,7 @@ public class WristActivater : MonoBehaviour
         }
 
     }
+    //Check if both fingertips are within collision box, and cooldown is ready
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == rightIndexFinger.name)
@@ -47,9 +51,11 @@ public class WristActivater : MonoBehaviour
     {
         if(palmMenu.activeInHierarchy)
             palmMenu.SetActive(false);
+            
         else palmMenu.SetActive(true);
     }
 
+    //If either finger tip leaves the wrist, prevent action from occuring
     void OnTriggerExit(Collider other)
     {
         if(other.gameObject.name == rightIndexFinger.name)

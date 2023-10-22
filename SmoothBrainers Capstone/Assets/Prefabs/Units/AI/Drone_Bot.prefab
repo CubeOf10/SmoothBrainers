@@ -6449,8 +6449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3593d0f0025ea4e4187b4ddc70cd4933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuFadeDelay: 0
-  menuFadeSpeed: 0
 --- !u!195 &-5834495152712803316
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6464,7 +6462,7 @@ NavMeshAgent:
   m_Speed: 0.2
   m_Acceleration: 0.6
   avoidancePriority: 50
-  m_AngularSpeed: 1
+  m_AngularSpeed: 500
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1

@@ -5901,7 +5901,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.01
-  m_Speed: 0.01
+  m_Speed: 0.04
   m_Acceleration: 0.6
   avoidancePriority: 50
   m_AngularSpeed: 1
@@ -5925,8 +5925,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3593d0f0025ea4e4187b4ddc70cd4933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuFadeDelay: 4
-  menuFadeSpeed: 0.2
 --- !u!114 &5499490836569782079
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,7 +5,6 @@ using TMPro;
 using UnityEngine.UI;
 public class UnitDisplayController : MonoBehaviour
 {
-    
     [SerializeField] private TMP_InputField unitName;
     [SerializeField] private TextMeshProUGUI ammo;
     [SerializeField] private TextMeshProUGUI acceleration;
@@ -13,18 +12,10 @@ public class UnitDisplayController : MonoBehaviour
     [SerializeField] private Slider health;
     [SerializeField] private TMP_InputField currentAction;
 
-    // Start is called before the first frame update
     void Start()
     {
         unitName.text = gameObject.transform.parent.name;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void setAmmo(float currentAmmo, float maximumAmmo)
     {
         ammo.text = currentAmmo.ToString() + " / " + maximumAmmo.ToString();
