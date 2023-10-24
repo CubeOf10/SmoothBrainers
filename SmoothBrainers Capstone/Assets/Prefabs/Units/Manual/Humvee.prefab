@@ -5925,8 +5925,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3593d0f0025ea4e4187b4ddc70cd4933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuFadeDelay: 4
-  menuFadeSpeed: 0.2
 --- !u!114 &5499490836569782079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5943,7 +5941,7 @@ MonoBehaviour:
   pathPoints: []
   timeBetweenPoints: 1
   distanceBetweenPoints: 0.05
-  marker: {fileID: 8331191039604317818, guid: 655ed1d21621b6d4f85cc9df469b055c, type: 3}
+  marker: {fileID: 8331191039604317818, guid: eb53ae94b606acf4da431b06db805f2c, type: 3}
   desk: {fileID: 0}
   groundPos: {fileID: 4997091452771180317, guid: ab4dfdba1a61b384cacebff79a3c3c47, type: 3}
 --- !u!114 &-8045898423665701204
