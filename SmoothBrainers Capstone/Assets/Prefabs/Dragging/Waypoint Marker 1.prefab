@@ -299,4 +299,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grounded: 1
+  rotationAllowed: 0
   offset: 0
